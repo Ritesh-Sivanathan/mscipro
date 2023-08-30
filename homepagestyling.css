@@ -1,3 +1,5 @@
+/* MAIN PAGE COLOURS */
+
 #mainpage {
 
     background-color:black;
@@ -9,9 +11,13 @@
     
     font-size: 40px;
     
+    
+    
+    /* SIGN UP AND LOG IN BUTTONS */
+    
     }
     
-    .button_container {
+    .account_button_container {
         position: relative;
     }
     
@@ -44,4 +50,35 @@
         cursor:pointer;
         font-size:16px
     
+    }
+    
+    .subject_link {
+        position:relative;
+    }
+    
+    
+    
+    /* SUBJECT LINKS */
+    
+    
+    .math_link{
+        position:absolute;
+        top:38px;
+        font-size:25px;
+        transform:translate(30%,0);
+    
+    }
+    
+    .science_link{
+        position:absolute;
+        top:38px;
+        font-size:25px;
+        transform:translate(175%, 0);
+    }
+    
+    .programming_link{
+        position:absolute;
+        top:38px;
+        font-size:25px;
+        transform:translate(200%,0);
     }
