@@ -1,9 +1,9 @@
 /* MAIN PAGE COLOURS */
-
 #mainpage {
 
     background-color:black;
     color:white;
+    min-width:1920px;
     
     }
     
@@ -81,4 +81,47 @@
         top:38px;
         font-size:25px;
         transform:translate(200%,0);
+    }
+    
+    /* DASH BETWEEN SIGN UP AND LOG IN */
+    
+    
+    
+    .dash {
+        width: 50px;
+        height:2px;
+        position:fixed;
+    
+    
+        bottom:50px;
+        left:1500px;
+        overflow:hidden;
+    
+        background-color:white;
+    
+    }
+    
+    .dash_class {
+        position:relative;
+        width: 100%;
+        text-align:center;
+    }
+    
+    .learn_more {
+        position:relative;
+    }
+    
+    .learn_more_button {
+        position:absolute;
+        transform:translate(380%,0);
+    }
+    
+    
+    /* LEARN MORE BUTTON MAIN PAGE */
+    
+    .learn_more_button{
+    
+       position:absolute;
+       left:590px;
+    
     }
