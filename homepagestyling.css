@@ -1,9 +1,15 @@
 /* MAIN PAGE COLOURS */
 #mainpage {
 
+
     background-color:black;
     color:white;
     min-width:1920px;
+    background-image: linear-gradient(to right, #FFFFFF, #4E8098), url('MSCIPRO%20(1).png');
+    background-size:1920px 300px;
+    background-repeat: no-repeat;
+    background-attachment:fixed;
+    
     
     }
     
@@ -11,8 +17,6 @@
     
     font-size: 40px;
     color:#00A9A5;
-    
-    
     
     /* SIGN UP AND LOG IN BUTTONS */
     
