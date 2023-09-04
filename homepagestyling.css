@@ -1,7 +1,6 @@
 /* MAIN PAGE COLOURS */
 #mainpage {
 
-
     background-color:black;
     color:white;
     min-width:1920px;
@@ -9,127 +8,134 @@
     background-size:1920px 300px;
     background-repeat: no-repeat;
     background-attachment:fixed;
-    
-    
-    }
-    
-    #main_title {
-    
+    z-index:4;
+
+
+
+}
+
+.main_title {
     font-size: 40px;
     color:#00A9A5;
+    z-index:4;
+
+/* SIGN UP AND LOG IN BUTTONS */
+
+}
+
+.account_button_container {
+    position: relative;
+}
+
+.sign_up {
+    position:absolute;
+    top: -69px;
+    right: 0;
+    transform: translate(-60%,0);
+
+    padding:10px 20px;
+    background-color: #2c3e50;
+    color:white;
+    border:none;
+    border-radius:5px;
+    cursor:pointer;
+    font-size:16px
     
-    /* SIGN UP AND LOG IN BUTTONS */
+
+}
+
+.log_in {
+    position:absolute;
+    top:-69px;
+    right:0;
+    transform: translate(-290%, 0);
+
+    padding:10px 20px;
+    background-color: #2c3e50;
+    color:white;
+    border:none;
+    border-radius:5px;
+    cursor:pointer;
+    font-size:16px
     
-    }
-    
-    .account_button_container {
-        position: relative;
-    }
-    
-    .sign_up {
-        position:absolute;
-        top: -69px;
-        right: 0;
-        transform: translate(-60%,0);
-    
-        padding:10px 20px;
-        background-color: #2c3e50;
-        color:white;
-        border:none;
-        border-radius:5px;
-        cursor:pointer;
-        font-size:16px
-    
-    }
-    
-    .log_in {
-        position:absolute;
-        top:-69px;
-        right:0;
-        transform: translate(-290%, 0);
-    
-        padding:10px 20px;
-        background-color: #2c3e50;
-        color:white;
-        border:none;
-        border-radius:5px;
-        cursor:pointer;
-        font-size:16px
-    
-    }
-    
-    .subject_link {
-        position:relative;
-    }
-    
-    
-    
-    /* SUBJECT LINKS */
-    
-    
-    .math_link{
-        position:absolute;
-        top:38px;
-        font-size:25px;
-        transform:translate(30%,0);
-    
-    }
-    
-    .science_link{
-        position:absolute;
-        top:38px;
-        font-size:25px;
-        transform:translate(175%, 0);
-    }
-    
-    .programming_link{
-        position:absolute;
-        top:38px;
-        font-size:25px;
-        transform:translate(200%,0);
-    }
-    
-    /* DASH BETWEEN SIGN UP AND LOG IN */
-    
-    
-    
-    /* .dash {
-        width: 50px;
-        height:2px;
-        position:fixed;
-    
-    
-        bottom:50px;
-        left:1500px;
-        overflow:hidden;
-    
-        background-color:white;
-    
-    }
-    
-    .dash_class {
-        position:relative;
-        width: 100%;
-        text-align:center;
-    } */
-    
-    /* LEARN MORE BUTTON MAIN PAGE */
-    
-    .learn_more {
-        position:relative;
-    }
-    
-    .learn_more_button {
-        position:absolute;
-        transform:translate(380%,0);
-        top:300px;
-        font-size:25px;
-        padding: 10px 15px;
-        text-align-center;
-        right:1480px;
-        border-radius:10px;
-        background-color:#90C2E7;
-        font-family: Arial, sans-serif;
-    
-    
-    }
+
+}
+
+.subject_link {
+    position:relative;
+    z-index:2;
+}
+
+
+
+/* SUBJECT LINKS */
+
+
+.math_link{
+    position:absolute;
+    top:38px;
+    font-size:25px;
+    transform:translate(30%,0);
+    z-index:2;
+
+}
+
+.science_link{
+    position:absolute;
+    top:38px;
+    font-size:25px;
+    transform:translate(175%, 0);
+    z-index:2;
+}
+
+.programming_link{
+    position:absolute;
+    top:38px;
+    font-size:25px;
+    transform:translate(200%,0);
+    z-index:2;
+}
+
+/* LEARN MORE BUTTON MAIN PAGE */
+
+.learn_more {
+    position:relative;
+}
+
+.learn_more_button {
+    position:absolute;
+    transform:translate(380%,0);
+    top:300px;
+    font-size:25px;
+    padding: 10px 15px;
+    text-align:center;
+    right:1480px;
+    border-radius:10px;
+    background-color:#90C2E7;
+    font-family: Arial, sans-serif;
+    z-index:2;
+
+
+}
+
+/* NEWS */
+
+
+
+.imagetest{
+    position:absolute;
+    top:0;
+    left:50%;
+    width:100px;
+    transform:translateX(-50%);
+    width:1920px;
+    height:300px;
+    object-fit:cover;
+    z-index:1;
+}
+
+h1 {
+    z-index:5;
+    color: red;
+    transform:translate(0%,0);
+}
