@@ -101,6 +101,7 @@
     font-size:25px;
     transform:translate(30%,0);
     z-index:2;
+    font-family: "Verdana", sans-serif;
 
 }
 
@@ -110,6 +111,7 @@
     font-size:25px;
     transform:translate(175%, 0);
     z-index:2;
+    font-family: "Verdana", sans-serif;
 }
 
 .programming_link{
@@ -118,22 +120,23 @@
     font-size:25px;
     transform:translate(200%,0);
     z-index:2;
+    font-family: "Verdana", sans-serif;
 }
 
 /* LEARN MORE BUTTON MAIN PAGE */
 
-.learn_more {
+.join_now {
     position:relative;
 }
 
-.learn_more_button {
+.join_now_button {
     position:absolute;
     transform:translate(380%,0);
     top:300px;
     font-size:25px;
     padding: 10px 15px;
     text-align:center;
-    right:1480px;
+    right:1400px;
     border-radius:10px;
     background-color:#90C2E7;
     font-family: Arial, sans-serif;
