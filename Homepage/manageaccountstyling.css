@@ -1,53 +1,51 @@
 /* Reset default margin and padding */
 body, html {
-    margin: 0;
-    padding: 0;
-    height: 100%;
-    background: linear-gradient(to bottom, #000000, #4E8098);
-  }
-  
-  /* Center the buttons horizontally and vertically */
-  .centered_buttons {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    height: 100vh;
-  }
-  
-  /* Style the buttons with added space between them */
-  .sign_up_box, .sign_in_box {
-    padding: 10px 20px;
-    background-color: #3498db;
-    color: white;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-    text-decoration: none;
-    margin: 10px 0; /* Adjust the margin to add vertical space between buttons */
-    font-size:35px;
-    border: 2px solid #000;
-  }
-  
-  .sign_in_box {
-      margin-top:0px;
-      color: #C0C0C0;
-      -webkit-text-stroke: 1px #008080;
-  }
-  
-  .sign_up_box {
-      color: #C0C0C0;
-      -webkit-text-stroke: 1px #008080;
-  }
-  
-  .return_to_home {
-      position:relative;
-  }
-  
-  .return_to_home_button {
-      margin-left:900px;
-      margin-top:20px;
-      top:100px;
-      color:white;
-      align-items:center;
-  }
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  background: linear-gradient(to bottom, #000000, #4E8098);
+}
+
+/* Center the buttons horizontally and vertically */
+.centered_buttons {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+/* Style the buttons with added space between them */
+.sign_up_box, .sign_in_box {
+  padding: 10px 20px;
+  background-color: #3498db;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  text-decoration: none;
+  margin: 10px 0; /* Adjust the margin to add vertical space between buttons */
+  font-size:35px;
+  border: 2px solid #000;
+}
+
+.sign_in_box {
+    margin-top:0px;
+    color: #C0C0C0;
+    -webkit-text-stroke: 1px #008080;
+}
+
+.sign_up_box {
+    color: #C0C0C0;
+    -webkit-text-stroke: 1px #008080;
+}
+
+.return_to_home {
+    position:relative;
+}
+
+.return_to_home_button {
+    margin-left:900px;
+    color:white;
+
+}

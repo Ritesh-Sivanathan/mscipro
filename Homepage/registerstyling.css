@@ -4,7 +4,7 @@ body {
     align-items: center;
     height: 100vh;
     margin: 0;
-    background: linear-gradient(to bottom, #ff4b2b, #f6f6f6);
+    background: linear-gradient(to bottom, #A9A9A9, #000000);
 }
 
 .registration-container {
@@ -14,7 +14,7 @@ body {
 }
 
 .red-box {
-    background-color: #ff4b2b;
+    background-color: #000000;
     color: white;
     text-align: center;
     padding: 20px;
@@ -37,11 +37,12 @@ body {
     border: none;
     border-radius: 5px;
     font-size: 16px;
+
 }
 
 .register-button {
-    background-color: #fff;
-    color: #ff4b2b;
+    background-color: #808080;
+    color: #000000;
     border: none;
     border-radius: 5px;
     padding: 10px 20px;
@@ -51,5 +52,6 @@ body {
 }
 
 .register-button:hover {
-    background-color: #ff754d;
+    background-color: #FFFFFF;
 }
+
