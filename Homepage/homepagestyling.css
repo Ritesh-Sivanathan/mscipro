@@ -135,6 +135,8 @@
     background-color:#90C2E7;
     font-family: Arial, sans-serif;
     z-index:2;
+}
 
-
+.join_now_button:hover {
+    cursor:pointer;
 }
