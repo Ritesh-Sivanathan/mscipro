@@ -126,11 +126,11 @@
 .join_now_button {
     position:absolute;
     transform:translate(380%,0);
-    top:300px;
+    top:270px;
     font-size:25px;
     padding: 10px 15px;
     text-align:center;
-    right:1400px;
+    right:1470px;
     border-radius:10px;
     background-color:#90C2E7;
     font-family: Arial, sans-serif;
