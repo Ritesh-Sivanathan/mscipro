@@ -1,5 +1,44 @@
 /* MAIN PAGE  */
 
+
+.square-text {
+    width: 400px; /* Adjust the width as needed */
+    background-color: black; /* Background color for the square */
+    text-align: center; /* Center-align text horizontally */
+    margin-left:350px;
+    margin-top:-26vh;
+    font-size: 16px; /* Adjust font size as needed */
+    display:flex;
+  }
+
+
+
+body, .welcome {
+    background-color: transparent;
+}
+
+#article1 {
+    margin-left:75px;
+    margin-top:80px;
+}
+
+.welcome{
+    margin-top:50px;
+    margin-left:94vh;
+}
+
+.desc {
+    margin-bottom:100px;
+    margin-left:72vh;
+}
+
+.navbar {
+    height:75px;
+    border-bottom: 10px solid #355070;
+    background-color: black;
+    
+}
+
 .navbar-brand{
     text-align:center;
 }
@@ -8,7 +47,7 @@
 
     background-color:black;
     color:white;
-    min-width:1920px;
+    
     background-image: linear-gradient(to right, #FFFFFF, #4E8098), url('MSCIPRO%20(1).png');
     background-size:1920px 300px;
     background-repeat: no-repeat;
