@@ -1,5 +1,9 @@
 /* MAIN PAGE  */
 
+.a:hover{
+    color: blue;
+}
+
 .article2d{
     position:absolute;
     margin-left:15vh;
