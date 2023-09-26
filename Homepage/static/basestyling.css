@@ -1,5 +1,14 @@
 /* MAIN PAGE  */
 
+#article2 {
+    left:85vh;
+    position:fixed;
+    top: 42vh;
+}
+
+#article2text {
+    margin-left:300px;
+}
 
 .square-text {
     width: 400px; /* Adjust the width as needed */
