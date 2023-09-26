@@ -1,5 +1,17 @@
 /* MAIN PAGE  */
 
+.article2d{
+    position:absolute;
+    margin-left:15vh;
+    margin-top:21vh;
+}
+
+.article1d{
+    position:absolute;
+    margin-left:15vh;
+    margin-top:21vh;
+}
+
 #article2 {
     left:85vh;
     position:fixed;
