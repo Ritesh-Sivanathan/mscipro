@@ -1,15 +1,5 @@
 /* MAIN PAGE  */
 
-#article2 {
-    left:85vh;
-    position:fixed;
-    top: 42vh;
-}
-
-#article2text {
-    margin-left:300px;
-}
-
 .square-text {
     width: 400px; /* Adjust the width as needed */
     background-color: black; /* Background color for the square */
@@ -33,12 +23,14 @@ body, .welcome {
 
 .welcome{
     margin-top:50px;
-    margin-left:94vh;
+    margin-left:95vh;
+    
 }
 
 .desc {
     margin-bottom:100px;
     margin-left:72vh;
+    
 }
 
 .navbar {
@@ -53,16 +45,24 @@ body, .welcome {
 }
 
 #mainpage {
-
-    background-color:black;
-    color:white;
-    
-    background-image: linear-gradient(to right, #FFFFFF, #4E8098), url('MSCIPRO%20(1).png');
-    background-size:1920px 300px;
+    background-color: black;
+    color: white;
+    background-image: linear-gradient(to right, #FFFFFF, #4E8098);
+    background-size: 100% 30vh; /* Adjust the height of the gradient portion */
     background-repeat: no-repeat;
-    background-attachment:fixed;
-    z-index:4;
+    background-attachment: fixed;
+    z-index: 4;
+    height: 300px; /* Set the height of the gradient portion */
+}
 
+#mainpage::after {
+    
+    display: block;
+    background-image: url('MSCIPRO%20(1).png'); /* Your background image URL */
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    height: calc(100% - 300px); /* Calculate the height of the rest of the page */
 }
 
 .main_title {
