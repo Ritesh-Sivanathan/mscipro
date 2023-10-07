@@ -14,3 +14,4 @@ Languages/Frameworks/Things included:
 - Lots more tools
 
 This project will be completed over 1.5 to 2 years as of August 2023. I'm using it to learn lots of different languages and tools practically.
+Oct 6th - Project will take much longer. Starting from scratch
