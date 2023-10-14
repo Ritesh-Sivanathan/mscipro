@@ -6,13 +6,13 @@ app = Flask(__name__)
 def index():
     return render_template('homepage.html')
 
-@app.route('/base.html')
+@app.route('/base')
 def readmore():
     return render_template('base.html')
 
-@app.route('/login.html')
+@app.route('/login')
 def login():
     return render_template('login.html')
 
 if __name__ == '__main__':
-    app.run(debug=True) 
+    app.run(debug=True)

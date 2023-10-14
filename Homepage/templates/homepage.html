@@ -1,21 +1,24 @@
 {% extends 'base.html' %}
 
-{% block text %}
+{% block about %}
 
-<h1 class="welcome"> Welcome! </h1>
-<!-- <h4 class="desc"> MSCIPro is your one-stop shop for STEM related content </h4> -->
+<center> <h2 class="abouth2"> <b> Welcome to MSCIPro! </b></h2></center> 
+<center> <h5 class="abouth5"> 
+    
+    Welcome! Here at MSCIPro, we provide top-tier STEM resources for both students and educators.
+
+</h5> </center>
 
 {% endblock %}
 
-{% block articles %}
+{% block image %}
 
-<img id="article1" src="https://go.trader.ca/wp-content/uploads/2022/02/250X250.png"/>
-<div class="square-text">
-<p id="article1text">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type a Read More</p>
-</div>
+<img src="https://i0.wp.com/quivivecottage.co.uk/wp-content/uploads/2015/10/Banner-1920x230.png?ssl=1" id="image1" draggable="False"> </img>
 
-<img id="article2" src="https://go.trader.ca/wp-content/uploads/2022/02/250X250.png"/>
-<div class="square-text">
+{% endblock %}
 
+{% block button %}
+
+<center> <a href="login.html"> <button id="started"> Get Started </button> </center> </a>
 
 {% endblock %}

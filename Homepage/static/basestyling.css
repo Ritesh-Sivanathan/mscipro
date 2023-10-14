@@ -1,5 +1,47 @@
 /* MAIN PAGE  */
 
+#started {
+    margin-top:100px;
+    background-color:#336699;
+    border:1px solid #fff;
+    border-radius:5px;
+    height:50px;
+    width:200px;
+    font-size:25px;
+}
+
+#image1 {
+    max-width:100%;
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+    -khtml-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    border-bottom:25px solid #355070;
+}
+
+.abouth2{
+    margin-top:65px;
+    font-size:50px;
+}
+
+.a:hover{
+    color: blue;
+}
+
+.article2d{
+    position:absolute;
+    margin-left:15vh;
+    margin-top:21vh;
+}
+
+.article1d{
+    position:absolute;
+    margin-left:15vh;
+    margin-top:21vh;
+}
+
 #article2 {
     left:85vh;
     position:fixed;
@@ -32,15 +74,14 @@ body, .welcome {
 }
 
 .welcome{
-    margin-top:50px;
-    margin-left:95vh;
+    display:inline-block;
+    padding-top:65px;
     
 }
 
 .desc {
     margin-bottom:100px;
     margin-left:72vh;
-    
 }
 
 .navbar {
@@ -55,24 +96,16 @@ body, .welcome {
 }
 
 #mainpage {
-    background-color: black;
-    color: white;
-    background-image: linear-gradient(to right, #FFFFFF, #4E8098);
-    background-size: 100% 30vh; /* Adjust the height of the gradient portion */
-    background-repeat: no-repeat;
-    background-attachment: fixed;
-    z-index: 4;
-    height: 300px; /* Set the height of the gradient portion */
-}
 
-#mainpage::after {
+    background-color:black;
+    color:white;
     
-    display: block;
-    background-image: url('MSCIPRO%20(1).png'); /* Your background image URL */
-    background-size: cover;
+    
+    background-size:1920px 300px;
     background-repeat: no-repeat;
-    background-attachment: fixed;
-    height: calc(100% - 300px); /* Calculate the height of the rest of the page */
+    background-attachment:fixed;
+    z-index:4;
+
 }
 
 .main_title {
