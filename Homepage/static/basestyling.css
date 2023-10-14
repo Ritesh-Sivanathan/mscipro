@@ -1,16 +1,24 @@
 /* MAIN PAGE  */
 
+#image1 {
+    position: absolute; /* Fix the position */
+    top: 70%; /* Adjust as needed to position vertically */
+    left: 50%; /* Adjust as needed to position horizontally */
+    transform: translate(-50%, -50%); /* Center the image */
+}
+
 #started {
-    margin-top:100px;
+    margin-top:350px;
     background-color:#336699;
     border:1px solid #fff;
     border-radius:5px;
     height:50px;
     width:200px;
     font-size:25px;
+    color: rgb(68, 68, 68);
 }
 
-#image1 {
+#bannerimg {
     max-width:100%;
     -webkit-touch-callout: none;
     -webkit-user-select: none;
