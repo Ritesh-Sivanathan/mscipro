@@ -10,5 +10,9 @@ def index():
 def readmore():
     return render_template('base.html')
 
+@app.route('/login.html')
+def login():
+    return render_template('login.html')
+
 if __name__ == '__main__':
     app.run(debug=True) 
