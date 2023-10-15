@@ -1,10 +1,25 @@
 /* MAIN PAGE  */
 
 #image1 {
-    position: absolute; /* Fix the position */
-    top: 70%; /* Adjust as needed to position vertically */
-    left: 50%; /* Adjust as needed to position horizontally */
-    transform: translate(-50%, -50%); /* Center the image */
+    position: fixed;
+    top: 540px;
+    left:550px;
+    width:10%;
+}
+
+#image2 {
+    position: fixed;
+    top: 58%;
+    left: 45%; 
+    width:10%;
+    
+}
+
+#image3 {
+    position: fixed;
+    top: 58%;
+    left: 62%; 
+    width:10%;
 }
 
 #started {
