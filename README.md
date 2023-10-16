@@ -22,3 +22,8 @@ Start to October 13th:
 
 - I learnt about CSS padding and margins (sort of)
 - I learnt about how to make it so images are resized based on screen size (width:100%)
+
+October 15th:
+
+- <marquee scrolldelay="150" scrollamount="50" style="color: red;"> MSCIPro Elite+ On sale 45% off!!! MSCIPro Elite+ On sale 45% off!!! MSCIPro Elite+ On sale 45% off!!! MSCIPro Elite+ On sale 45% off!!! MSCIPro Elite+ On sale 45% off!!! MSCIPro Elite+ On sale 45% off!!! MSCIPro Elite+ On sale 45% off!!! MSCIPro Elite+ On sale 45% off!!! MSCIPro Elite+ On sale 45% off!!! MSCIPro Elite+ On sale 45% off!!! MSCIPro Elite+ On sale 45% off!!! MSCIPro Elite+ On sale 45% off!!!  MSCIPro Elite+ On sale 45% off!!! MSCIPro Elite+ On sale 45% off!!!  MSCIPro Elite+ On sale 45% off!!! MSCIPro Elite+ On sale 45% off!!!</marquee>
+- marquees https://developer.mozilla.org/en-US/docs/Web/HTML/Element/marquee
