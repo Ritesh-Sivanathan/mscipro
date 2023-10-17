@@ -4,6 +4,8 @@
 
 {% block about %}
 
+<link rel="stylesheet" href="{{ url_for('static', filename='homepagestyling.css') }}" crossorigin="anonymous">
+
 <center> <h2 class="abouth2"> <b> Welcome to MSCIPro! </b></h2></center> 
 <center> <h5 class="abouth5"> 
     
@@ -19,20 +21,66 @@
 
 {% endblock %}
 
-{% block button %}
+{% block subjects %}
+<center> 
 
-<center> <a href="login.html"> <button id="started"> Get Started </button> </center> </a>
+<div class="subject_container">
+    <img id="compsci" src="https://magazine.fbk.eu/wp-content/uploads/2018/08/Fotolia_FAS-300x300.jpg" draggable="false">
+    <h2 class="subjecttitle"> <u> Computer Science </u> </h2>
+    <h3> Resources: </h3>
+
+    <ul>
+        <li> 15+ Programming Languages</li>
+        <li> 1000+ Programming concepts</li>
+        <li> Mock interviews </li>
+        <li> Programming Playgrounds </li>
+        <li> Competion/Contest Practice and Prepartion</li>
+        <li> Online help forum </li>
+    </ul>
+
+</div>
+
+<div class="subject_container">
+    <img id="mathematics" src="https://insidesources.com/wp-content/uploads/2017/03/Common-Core-Math-300x300.jpg" draggable="false">
+    <h2 class="subjecttitle"> <u> Mathematics </u></h2>
+    <h3> Resources: </h3>
+
+    <ul>
+        <li> 100+ hours of instructed learning </li>
+        <li> Grade 1 to Post-graduate level mathematics </li>
+        <li> 15,000+ problems </li>
+        <li> Verified SAT, ACT, GRE, GMAT, and AP practice</li>
+        <li> Live help available </li>
+        <li> Online help forum </li>
+
+    </ul>
+
+
+</div>
+
+<div class="subject_container">
+    <img id="science" src="https://www.environmentalscience.org/wp-content/uploads/2018/08/physics-300x300.webp" draggable="false">
+    <h2 class="subjecttitle"> <u> Science </u></h2>
+    <h3> Resources: </h3>
+
+    <ul>
+        <li> 50+ hours of instructed learning </li>
+        <li> Grade 1 to PhD level science </li>
+        <li> 1,000,000+ randomly generate problems </li>
+        <li> Research assistance & Publication</li>
+        <li> Official FULL curriculum material (Gr1 - Gr12) </li>
+        <li> Online help forum </li>
+    </ul>
+
+</div>
+</center>
+
+
 
 {% endblock %}
 
-{% block showcase %}
+{% block button %}
 
-<div class="images">
-
-<img src="https://upload.wikimedia.org/wikipedia/commons/1/1b/Square_200x200.png" id="image1"> </img>
-<img src="https://upload.wikimedia.org/wikipedia/commons/1/1b/Square_200x200.png" id="image2"> </img>
-<img src="https://upload.wikimedia.org/wikipedia/commons/1/1b/Square_200x200.png" id="image3"> </img>
-
-</div>
+<center> <a href="login.html"> <button id="started"> Get Started </button> </center> </a>
 
 {% endblock %}
