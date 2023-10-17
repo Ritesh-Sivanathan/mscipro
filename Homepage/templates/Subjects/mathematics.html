@@ -1,0 +1,25 @@
+{% extends 'base.html' %}
+
+
+{% block math %}
+
+<link rel="stylesheet" href="{{ url_for('static', filename='mathstyling.css') }}" crossorigin="anonymous">
+
+<div class="boxes">
+    <div id="mybox1"> 
+       <center> <h2> <u> Unofficial Grade Work </u> </h2> </center>
+    </div>
+    <div id="mybox2"> 
+        <center> <h2> <u> Exam Practice </u> </h2> </center>
+    </div>
+    <div id="mybox3"> 
+        <center> <h2> <u> General Practice Problems </u>  </h2> </center>
+    </div>
+    <div id="mybox4"> 
+        <center> <h2> <u> Official Grade Work (Canada) </u> </h2> </center>
+    </div>
+    <div id="mybox5"> 
+        <center> <h2> <u> Resources </u> </h2> </center>
+    </div>
+</div>
+{% endblock %}

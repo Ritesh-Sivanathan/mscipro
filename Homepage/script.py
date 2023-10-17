@@ -29,5 +29,9 @@ def login():
 def register():
     return render_template('register.html')
 
+@app.route('/mathematics')
+def math():
+    return render_template('Subjects/mathematics.html')
+
 if __name__ == '__main__':
     app.run(debug=True)

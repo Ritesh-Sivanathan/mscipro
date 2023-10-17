@@ -1,0 +1,20 @@
+@import url('https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@300&family=Raleway:wght@300&display=swap');
+
+/* font-family: 'Raleway', sans-serif; */
+
+html, body {
+    background-color:black;
+    overflow:hidden;
+}
+
+.boxes {
+    display:flex;
+    justify-content: space-between;
+}
+
+#mybox1, #mybox2, #mybox3, #mybox4, #mybox5 {
+    height: 85vh;
+    margin-top:1%;
+    width: 18%;
+    background-color: grey;
+}
