@@ -33,5 +33,9 @@ def register():
 def math():
     return render_template('Subjects/mathematics.html')
 
+@app.route('/science')
+def science():
+    return render_template('Subjects/science.html')
+
 if __name__ == '__main__':
     app.run(debug=True)

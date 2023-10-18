@@ -1,6 +1,10 @@
 
 @import url('https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@300&family=Raleway:wght@300&display=swap');
 
+html, body {
+    overflow: hidden;
+}
+
 .full-body {
     font-family: 'Raleway', sans-serif;
     background-color: black;
@@ -24,7 +28,8 @@
 .login-container {
     background-color: #fff;
     padding: 30px;
-    border-radius: 5px;
+    border-radius: 10px;
+    border: 2px solid #007BFF;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
     text-align: center;
 }
