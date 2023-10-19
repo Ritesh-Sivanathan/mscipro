@@ -1,6 +1,8 @@
 
 @import url('https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@300&family=Raleway:wght@300&display=swap');
 
+
+
 html, body {
     overflow: hidden;
 }
@@ -25,6 +27,12 @@ html, body {
     font-size:small;
 }
 
+.full-body #error {
+    font-size: small;
+    margin-top: 15%;
+    color:red;
+}
+
 .login-container {
     background-color: #fff;
     padding: 30px;
@@ -32,6 +40,10 @@ html, body {
     border: 2px solid red;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
     text-align: center;
+}
+
+.login-container input {
+    border: 2px solid rgba(255, 0, 0, 0.089);
 }
 
 h2 {

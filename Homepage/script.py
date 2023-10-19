@@ -54,7 +54,9 @@ def authenticate():
                 session['logged_in'] = True
                 return redirect(url_for('dashboard'))
             else:
-                return mail_list
+                return render_template('loginfailed.html')
+            
+        return render_template('homepage.html')
     
     elif request.referrer.endswith('/register'):
         email = request.form.get('email')
