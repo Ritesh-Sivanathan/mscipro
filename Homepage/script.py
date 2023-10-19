@@ -4,9 +4,7 @@ from flask import Flask, render_template, request, redirect, url_for, session
 
 app = Flask(__name__)
 
-# Set a secret key for session management.
 app.secret_key = 'your_secret_key'
-# Replace 'your_secret_key' with a strong secret key.
 
 sample_user = {
     'username': 'your_username',
@@ -16,7 +14,6 @@ sample_user = {
 @app.route('/')
 def index():
     return render_template('homepage.html')
-    
 
 @app.route('/base')
 def readmore():
@@ -67,8 +64,6 @@ def authenticate():
     return render_template('homepage.html')
 
         
-
-
 @app.route('/dashboard')
 def dashboard():
     if session.get('logged_in'):
@@ -87,4 +82,3 @@ def failedtest():
 
 if __name__ == '__main__':
     app.run(debug=True)
-    
