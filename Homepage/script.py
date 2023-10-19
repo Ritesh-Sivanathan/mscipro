@@ -1,3 +1,5 @@
+# https://www.geeksforgeeks.org/login-and-registration-project-using-flask-and-mysql/
+
 from flask import Flask, render_template, request, redirect, url_for, session
 
 app = Flask(__name__)
@@ -6,14 +8,9 @@ app = Flask(__name__)
 app.secret_key = 'your_secret_key'
 # Replace 'your_secret_key' with a strong secret key.
 
-# Define a sample user for demonstration.
 sample_user = {
     'username': 'your_username',
     'password': 'your_password',
-}
-
-mail_list = {
-    
 }
 
 @app.route('/')
@@ -50,13 +47,11 @@ def authenticate():
         # Replace this with your actual authentication logic.
         with open('Homepage/users.txt', 'r') as file:
             content = file.read()
-            if f"{username}: {password}" in content:
+            if username and password in content:
                 session['logged_in'] = True
                 return redirect(url_for('dashboard'))
             else:
                 return render_template('loginfailed.html')
-            
-        return render_template('homepage.html')
     
     elif request.referrer.endswith('/register'):
         email = request.form.get('email')
@@ -64,9 +59,12 @@ def authenticate():
         password = request.form.get('password')
 
         with open('Homepage/users.txt', 'r+') as file:
-            file.write(f"{username} : {password}")
+            if username not in file.read():
+                file.write(f"{username} : {password}")
+            else:
+                return render_template('register.html')
 
-        return render_template('homepage.html')
+    return render_template('homepage.html')
 
         
 
