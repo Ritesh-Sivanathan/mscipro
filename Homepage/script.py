@@ -12,6 +12,10 @@ sample_user = {
     'password': 'your_password',
 }
 
+mail_list = {
+    
+}
+
 @app.route('/')
 def index():
     return render_template('homepage.html')
@@ -37,5 +41,43 @@ def math():
 def science():
     return render_template('Subjects/science.html')
 
+@app.route('/auth', methods=['POST'])
+def authenticate():
+    if request.referrer.endswith('/login'):
+        username = request.form.get('username')
+        password = request.form.get('password')
+
+        # Replace this with your actual authentication logic.
+        if username in sample_user and sample_user[username] == password:
+            session['logged_in'] = True
+            return redirect(url_for('dashboard'))
+        else:
+           return mail_list
+    
+    elif request.referrer.endswith('/register'):
+        email = request.form.get('email')
+        username = request.form.get('username')
+        password = request.form.get('password')
+
+        sample_user[username] = password
+
+        return render_template('homepage.html')
+
+        
+
+
+@app.route('/dashboard')
+def dashboard():
+    if session.get('logged_in'):
+        return render_template('homepage.html')
+    else:
+        return redirect(url_for('login'))
+
+@app.route('/logout')
+def logout():
+    session.pop('logged_in', None)
+    return redirect(url_for('login'))
+
 if __name__ == '__main__':
     app.run(debug=True)
+    

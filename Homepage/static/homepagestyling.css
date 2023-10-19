@@ -45,6 +45,11 @@ html {
 
 }
 
+.subject_container img {
+    border-radius: 30px;
+    border:2px solid white;
+}
+
 .subjecttitle {
     display:flexbox;
     margin-top:5%
@@ -144,3 +149,4 @@ body, .welcome {
 .navbar-brand{
     text-align:center;
 }
+
