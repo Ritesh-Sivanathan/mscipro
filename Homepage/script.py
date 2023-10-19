@@ -50,7 +50,7 @@ def authenticate():
         # Replace this with your actual authentication logic.
         with open('Homepage/users.txt', 'r') as file:
             content = file.read()
-            if username and password in content:
+            if f"{username}: {password}" in content:
                 session['logged_in'] = True
                 return redirect(url_for('dashboard'))
             else:
