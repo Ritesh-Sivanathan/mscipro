@@ -8,7 +8,7 @@
 <link rel="stylesheet" href="{{ url_for('static', filename='registerstyling.css') }}" crossorigin="anonymous">
 
 <div class="register-container">
-    <h2 id="h2"> Register </h2>
+    <h2 id="h2" style="user-select:none;"> Register </h2>
     <form action="/auth" method="post">
 
         <label for="email" style="user-select: none;">Email:</label>
@@ -20,7 +20,7 @@
         <label for="password" style="user-select: none;">Password:</label>
         <input type="password" id="password" name="password" required>
 
-        <button type="submit"> Register </button>
+        <button type="submit" style="user-select:none;"> Register </button>
 
         <h3 id="register" style="user-select: none;"> Already have an account? <a href="/login"> Sign in </a> </h3>
         <h3 id="forgot" style="user-select: none;"> <a href=""> Forgot password </a> </h3>

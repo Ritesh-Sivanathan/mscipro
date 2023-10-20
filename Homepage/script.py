@@ -1,25 +1,19 @@
+# https://www.geeksforgeeks.org/login-and-registration-project-using-flask-and-mysql/
+
 from flask import Flask, render_template, request, redirect, url_for, session
 
 app = Flask(__name__)
 
-# Set a secret key for session management.
 app.secret_key = 'your_secret_key'
-# Replace 'your_secret_key' with a strong secret key.
 
-# Define a sample user for demonstration.
 sample_user = {
     'username': 'your_username',
     'password': 'your_password',
 }
 
-mail_list = {
-    
-}
-
 @app.route('/')
 def index():
     return render_template('homepage.html')
-    
 
 @app.route('/base')
 def readmore():
@@ -48,24 +42,29 @@ def authenticate():
         password = request.form.get('password')
 
         # Replace this with your actual authentication logic.
-        if username in sample_user and sample_user[username] == password:
-            session['logged_in'] = True
-            return redirect(url_for('dashboard'))
-        else:
-           return mail_list
+        with open('users.txt', 'r') as file:
+            content = file.read()
+            if username and password in content:
+                session['logged_in'] = True
+                return redirect(url_for('dashboard'))
+            else:
+                while username and password not in content:
+                    return render_template('loginfailed.html')
     
     elif request.referrer.endswith('/register'):
         email = request.form.get('email')
         username = request.form.get('username')
         password = request.form.get('password')
 
-        sample_user[username] = password
+        with open('Homepage/users.txt', 'r+') as file:
+            if username not in file.read():
+                file.write(f"{username} : {password}")
+            else:
+                return render_template('register.html')
 
-        return render_template('homepage.html')
+    return render_template('homepage.html')
 
         
-
-
 @app.route('/dashboard')
 def dashboard():
     if session.get('logged_in'):
@@ -78,6 +77,17 @@ def logout():
     session.pop('logged_in', None)
     return redirect(url_for('login'))
 
+@app.route('/loginfailed')
+def failedtest():
+    if request.referrer.endswith('/loginfailed'):
+            username = request.form.get('username')
+            password = request.form.get('password')
+            with open('users.txt', 'r') as file:
+                content = file.read()
+            while username not in content:
+                return render_template('/loginfailed')
+    
+            return render_template('/homepage')
+    
 if __name__ == '__main__':
     app.run(debug=True)
-    
