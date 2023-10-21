@@ -35,6 +35,10 @@ def math():
 def science():
     return render_template('Subjects/science.html')
 
+@app.route('/programming')
+def programming():
+    return render_template('Subjects/programming.html')
+
 @app.route('/auth', methods=['POST'])
 def authenticate():
     if request.referrer.endswith('/login'):

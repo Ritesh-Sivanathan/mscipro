@@ -3,6 +3,10 @@
 
 @import url('https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@300&family=Raleway:wght@300&display=swap');
 
+::-webkit-scrollbar {
+    display:none;
+}
+
 body {
     background-color: transparent;
     overflow: auto;
@@ -117,10 +121,7 @@ li {
     padding-top:65px;
 }
 
-#article1 {
-    margin-left:75px;
-    margin-top:80px;
-}
+
 
 .desc {
     margin-bottom:100px;

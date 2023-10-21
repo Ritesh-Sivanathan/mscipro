@@ -1,0 +1,25 @@
+@import url('https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@300&family=Raleway:wght@300&display=swap');
+
+/* font-family: 'Raleway', sans-serif; */
+
+html, body {
+    background-color:black;
+}
+
+.boxes {
+    display:flex;
+    justify-content: space-between;    
+}
+
+#grwork, #exams, #pracprob, #ofgrwork, #rsrcs {
+    height: 50%;
+    margin-top:1%;
+    width: 18%;
+    background-color: grey;
+    border: 5px solid rgb(0, 61, 0);
+}
+
+.grworklist, .examslist, .pracproblist, .ofgrworklist {
+    margin-top:5%;
+    font-size:195%;
+}

@@ -18,11 +18,13 @@
         </center>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav">
             <span class="navbar-toggler-icon"></span>
+            <div class="content">
+            </div>
         </button>
         <div class="collapse navbar-collapse" id="navbarNav">
             <ul class="navbar-nav mr-auto">
                 <li class="nav-item active">
-                    <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
+                    <a class="nav-link" href="/" style="background-color: #343a40;">Home <span class="sr-only">(current)</span></a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link" href="mathematics">Math</a>
@@ -31,7 +33,7 @@
                     <a class="nav-link" href="science">Science</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="#">Programming</a>
+                    <a class="nav-link" href="programming">Programming</a>
                 </li>
             </ul>
             <ul class="navbar-nav">
@@ -117,5 +119,44 @@ nav {
     text-align:center;
 }
 
+.navbar-toggler {
+  background-color: #eee;
+  color: #444;
+  cursor: pointer;
+  padding: 18px;
+  width: 100%;
+  border: none;
+  text-align: left;
+  outline: none;
+  font-size: 15px;
+}
+
+.active, .navbar-toggler:hover {
+  background-color: #ccc;
+}
+
+.content {
+  padding: 0 18px;
+  display: none;
+  overflow: hidden;
+  background-color: #f1f1f1;
+}
+
 </style>
 
+<script>
+    var coll = document.getElementsByClassName('navbar-toggler');
+    var i;
+
+    for (i = 0; i < coll.length; i++) {
+  coll[i].addEventListener("click", function() {
+    this.classList.toggle("active");
+    var content = this.nextElementSibling;
+    if (content.style.display === "block") {
+      content.style.display = "none";
+    } else {
+      content.style.display = "block";
+    }
+  });
+}
+</script>
