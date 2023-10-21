@@ -1,11 +1,11 @@
 {% extends 'base.html' %}
 
-{% block login %}
-
 {% block title %} MSCIPro - Login {% endblock %}
 
+{% block login %}
+
 <div class="full-body">
-<link rel="stylesheet" href="{{ url_for('static', filename='loginstyling.css') }}" crossorigin="anonymous">
+<link rel="stylesheet" href="{{ url_for('static', filename='loginfailedstyling.css') }}" crossorigin="anonymous">
 
 <div class="login-container">
     <h2 id="h2">Login</h2>
@@ -18,9 +18,11 @@
 
         <button type="submit">Log In</button>
 
+        <h3 id="error" style="user-select:none;"> Login Failed. Please try again. </h3>
         <h3 id="signup" style="user-select: none;"> Don't have an account? <a href="/register"> Sign up </a> </h3>
         <h3 id="forgot" style="user-select: none;"> <a href=""> Forgot password </a> </h3>
     </form>
 </div>
 </div>
+
 {% endblock %}

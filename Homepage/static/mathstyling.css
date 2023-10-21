@@ -8,8 +8,7 @@ html, body {
 
 .boxes {
     display:flex;
-    justify-content: space-between;
-    
+    justify-content: space-between;    
 }
 
 #grwork, #exams, #pracprob, #ofgrwork, #rsrcs {

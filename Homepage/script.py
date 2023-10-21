@@ -42,14 +42,11 @@ def authenticate():
         password = request.form.get('password')
 
         # Replace this with your actual authentication logic.
-        with open('users.txt', 'r') as file:
-            content = file.read()
-            if username and password in content:
-                session['logged_in'] = True
-                return redirect(url_for('dashboard'))
-            else:
-                while username and password not in content:
-                    return render_template('loginfailed.html')
+        if username in sample_user and sample_user[username] == password:
+            session['logged_in'] = True
+            return redirect(url_for('dashboard'))
+        else:
+           return mail_list
     
     elif request.referrer.endswith('/register'):
         email = request.form.get('email')
@@ -77,17 +74,5 @@ def logout():
     session.pop('logged_in', None)
     return redirect(url_for('login'))
 
-@app.route('/loginfailed')
-def failedtest():
-    if request.referrer.endswith('/loginfailed'):
-            username = request.form.get('username')
-            password = request.form.get('password')
-            with open('users.txt', 'r') as file:
-                content = file.read()
-            while username not in content:
-                return render_template('/loginfailed')
-    
-            return render_template('/homepage')
-    
 if __name__ == '__main__':
     app.run(debug=True)

@@ -3,9 +3,10 @@
 
 @import url('https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@300&family=Raleway:wght@300&display=swap');
 
-
-
-/* LOGIN PAGE */
+body {
+    background-color: transparent;
+    overflow: auto;
+}
 
 
 /* GET STARTED pulsing animation */
@@ -22,19 +23,12 @@
     }
 }
 
-nav {
-    font-family: 'Raleway', sans-serif;
-    font-size:130%;
-}
-
 li {
     font-family: 'Raleway', sans-serif;
     color: rgb(204, 204, 204);
 }
 
-html {
-    background-color: black;
-}
+
 
 .subject_container {
     display: inline-block;
@@ -117,10 +111,10 @@ html {
     display:flex;
   }
 
-
-
-body, .welcome {
+.welcome {
     background-color: transparent;
+    display:inline-block;
+    padding-top:65px;
 }
 
 #article1 {
@@ -128,25 +122,10 @@ body, .welcome {
     margin-top:80px;
 }
 
-.welcome{
-    display:inline-block;
-    padding-top:65px;
-    
-}
-
 .desc {
     margin-bottom:100px;
     margin-left:72vh;
 }
 
-.navbar {
-    height:20%;
-    border-bottom: 10px solid #355070;
-    background-color: black;
-    
-}
 
-.navbar-brand{
-    text-align:center;
-}
 
