@@ -6,6 +6,7 @@
 }
 
 .full-body {
+    
     font-family: 'Raleway', sans-serif;
     background-color: black;
     margin: 0;
@@ -13,15 +14,26 @@
     display: flex;
     justify-content: center;
     align-items: center;
-}
+    
 
-.full-body #signup {
-    margin-top:8%;
-    font-size:small;
-}
+    #signup {
+        margin-top:8%;
+        font-size:small;
+    }
 
-.full-body #forgot {
-    font-size:small;
+    #forgot {
+        font-size:small;
+    }
+
+    #submit_button {
+        background-color: #007BFF;
+        color: #fff;
+        padding: 10px;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+        margin-top:8%;
+    }
 }
 
 .login-container {
@@ -51,12 +63,3 @@ input {
     
 }
 
-#submit_button {
-    background-color: #007BFF;
-    color: #fff;
-    padding: 10px;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-    margin-top:8%;
-}

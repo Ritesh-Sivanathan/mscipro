@@ -3,6 +3,8 @@
 
 @import url('https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@300&family=Raleway:wght@300&display=swap');
 
+
+
 ::-webkit-scrollbar {
     display:none;
 }
@@ -125,14 +127,14 @@ li {
     animation: pulse 15s infinite; 
 }
 
-
+#dialog {
+    display:none;
+}
 
 #started:hover {
     transform: scale(1.1);
     animation: none;
 }
-
-
 
 
 
@@ -162,6 +164,4 @@ li {
     margin-bottom:100px;
     margin-left:72vh;
 }
-
-
 

@@ -14,11 +14,22 @@
     display: flex;
     justify-content: center;
     align-items: center;
-}
 
-.full-body #register {
-    margin-top:8%;
-    font-size:small;
+    #register {
+        margin-top:8%;
+        font-size:small;
+    }
+
+    #submit_button {
+        background-color: #007BFF;
+        color: #fff;
+        padding: 10px;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+        margin-top:8%;
+    }
+
 }
 
 .register-container {
@@ -51,12 +62,3 @@ input {
     border-radius: 5px;
 }
 
-#submit_button {
-    background-color: #007BFF;
-    color: #fff;
-    padding: 10px;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-    margin-top:8%;
-}

@@ -24,30 +24,35 @@ html, body {
     justify-content: space-between;    
 }
 
-@media (max-width: 800px) {
+@media (max-width: 1000px) {
     .boxes {
         display:block;
         width:450%;
         margin-left:10%;
-
     }
 
     ::-webkit-scrollbar {
         display:none;
     }
 }
-
-@media screen and (max-width: 1000px) {
+    
+@media screen and (max-width:1000px) {
     #btn-bottom, #btn-top{ 
         display:block;
     }
 }
-    
+
     @media screen and (min-width:1001px) {
-        #btn-bottom, #btn-top{ 
+        #btn-bottom, #btn-top {
             display:none;
         }
     }
+
+
+
+
+
+
 
 #grwork, #exams, #pracprob, #ofgrwork, #rsrcs {
     height: 50%;
