@@ -5,11 +5,15 @@
 {% block math %}
 
 <link rel="stylesheet" href="{{ url_for('static', filename='mathstyling.css') }}" crossorigin="anonymous">
+<script src="{{ url_for('static', filename='math.js') }}"></script>
+
+
+<div id="jumper"></div>
+<center> <button data-target="jumper2" id="btn-bottom"> To Bottom </button> </center>
 
 <div class="boxes">
     <div id="grwork"> 
        <center> <h2> <u> Unofficial Grade Work </u> </h2> </center>
-
        <div class="grworklist">
             <ul> 
                 <li> Grade 1 </li>
@@ -123,4 +127,9 @@
 
     </div>
 </div>
+
+<center> <button data-target="jumper" id="btn-top"> To Top </button> </center>
+<div id="jumper2"></div>
+
 {% endblock %}
+

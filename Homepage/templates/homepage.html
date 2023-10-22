@@ -9,8 +9,8 @@
 
 <link rel="stylesheet" href="{{ url_for('static', filename='homepagestyling.css') }}" crossorigin="anonymous">
 
-<center> <h2 class="abouth2"> <b> Welcome to MSCIPro! </b></h2></center> 
-<center> <h5 class="abouth5"> Welcome! Here at MSCIPro, we provide top-tier STEM resources for both students and educators. </h5> </center>
+<center> <h2 id="abouth2"> <b> Welcome to MSCIPro! </b></h2></center> 
+<center> <h5 id="abouth5"> Welcome! Here at MSCIPro, we provide top-tier STEM resources for both students and educators. </h5> </center>
 
 {% endblock %}
 
@@ -63,15 +63,22 @@
     <ul>
         <li> 50+ hours of instructed learning </li>
         <li> Grade 1 to PhD level science </li>
-        <li> 1,000,000+ randomly generate problems </li>
+        <li> 1,000,000+ randomly generated problems </li>
         <li> Research assistance & Publication</li>
         <li> Official FULL curriculum material (Gr1 - Gr12) </li>
         <li> Online help forum </li>
     </ul>
 
 </div>
+
+<div class="totop">
+    <button id="button_totop"> <a href="#abouth2" > To Top </a> </button> 
+</div>
+
 </center>
 
 {% endblock %}
 
 {% block button %} <center> <a href="/login"> <button id="started" draggable="false"> Get Started </button> </center> </a> {% endblock %}
+
+

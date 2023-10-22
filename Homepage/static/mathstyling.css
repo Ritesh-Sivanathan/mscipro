@@ -4,12 +4,45 @@
 
 html, body {
     background-color:black;
+    scroll-behavior: smooth;
+}
+
+#btn-top, #btn-bottom {
+    margin-top:5%;
+    border: 2px solid black;
+    border-radius: 5px;
+    padding:5px;
 }
 
 .boxes {
     display:flex;
     justify-content: space-between;    
 }
+
+@media (max-width: 800px) {
+    .boxes {
+        display:block;
+        width:450%;
+        margin-left:10%;
+
+    }
+
+    ::-webkit-scrollbar {
+        display:none;
+    }
+}
+
+@media screen and (max-width: 1000px) {
+    #btn-bottom, #btn-top{ 
+        display:block;
+    }
+}
+    
+    @media screen and (min-width:1001px) {
+        #btn-bottom, #btn-top{ 
+            display:none;
+        }
+    }
 
 #grwork, #exams, #pracprob, #ofgrwork, #rsrcs {
     height: 50%;

@@ -1,18 +1,19 @@
 @import url('https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@300&family=Raleway:wght@300&display=swap');
 
-html, body {
-    overflow: hidden;
+
+::-webkit-scrollbar{
+    display:none;
 }
+
 
 .full-body {
     font-family: 'Raleway', sans-serif;
-    background-image: linear-gradient(to bottom right, rgb(0, 0, 0), rgb(13, 0, 194));
+    background-color: black;
     margin: 0;
     padding: 0;
     display: flex;
     justify-content: center;
     align-items: center;
-    height: 100vh;
 }
 
 .full-body #register {
@@ -32,6 +33,7 @@ html, body {
     border-radius: 10px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
     text-align: center;
+    margin-top:11%;
 }
 
 h2 {

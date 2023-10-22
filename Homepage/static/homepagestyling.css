@@ -27,12 +27,22 @@ body {
     }
 }
 
+@media screen and (max-width: 1000px) {
+    #button_totop{ 
+        display:block;
+    }
+}
+    
+    @media screen and (min-width:1001px) {
+        #button_totop{ 
+            display:none;
+        }
+    }
+
 li {
     font-family: 'Raleway', sans-serif;
     color: rgb(204, 204, 204);
 }
-
-
 
 .subject_container {
     display: inline-block;
@@ -89,14 +99,14 @@ li {
     border-bottom:25px solid #355070;
 }
 
-.abouth2{
+#abouth2{
     margin-top:2%;
     font-size:350%;
     font-family: 'Raleway', sans-serif;
     color:#6b6b6b;
 }
 
-.abouth5{
+#abouth5{
     font-family: 'Raleway', sans-serif;
     color:#6b6b6c
 }

@@ -5,6 +5,10 @@
 {% block math %}
 
 <link rel="stylesheet" href="{{ url_for('static', filename='programmingstyling.css') }}" crossorigin="anonymous">
+<script src="{{ url_for('static', filename='math.js') }}"></script>
+
+<div id="jumper"></div>
+<center> <button data-target="jumper2" id="btn-bottom"> To Bottom </button> </center>
 
 <div class="boxes">
     <div id="grwork"> 
@@ -76,4 +80,8 @@
 
     </div>
 </div>
+
+<center> <button data-target="jumper" id="btn-top"> To Top </button> </center>
+<div id="jumper2"></div>
+
 {% endblock %}
