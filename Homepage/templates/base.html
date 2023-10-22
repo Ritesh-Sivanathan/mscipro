@@ -24,7 +24,7 @@
         <div class="collapse navbar-collapse" id="navbarNav">
             <ul class="navbar-nav mr-auto">
                 <li class="nav-item active">
-                    <a class="nav-link" href="/" style="background-color: #343a40;">Home <span class="sr-only">(current)</span></a>
+                    <a class="nav-link" href="/" style="background-color: #343a40; color:rgba(192, 192, 192, 0.973);;">Home <span class="sr-only"></span></a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link" href="mathematics">Math</a>
@@ -43,54 +43,41 @@
                 <li class="nav-item">
                     <a class="nav-link" href="register">Register</a>
                 </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="contact"> Contact Us </a>
+                </li>
             </ul>
         </div>
     </nav>
     
 
-    {% block image %}
+    {% block image %} {% endblock %}
 
-    {% endblock %}
+    {% block text %} {% endblock %} 
+    
+    {% block about %} {% endblock %}
 
-    {% block text %}
+    {% block showcase %} {% endblock %}
 
-    {% endblock %}
+    {% block button %} {% endblock %}
 
-    {% block about %}
-
-    {% endblock %}
-
-    {% block showcase %}
-
-    {% endblock %}
-
-    {% block button %}
-
-    {% endblock %}
-
-    {% block subjects %}
-
-    {% endblock %}
+    {% block subjects %} {% endblock %}
 
  <!---------------------------------------------------------------------------- LOGIN AND REGISTER PAGE ---------------------------------------------------------------------------->
 
-    {% block login %}
-
-    {% endblock %}
+    {% block login %} {% endblock %}
 
 <!---------------------------------------------------------------------------- SUBJECT PAGES ---------------------------------------------------------------------------->
 
-{% block math %}
+{% block math %} {% endblock %}
 
-{% endblock %}
+{% block science %} {% endblock %}
 
-{% block science %}
+{% block compsci %} {% endblock %}
 
-{% endblock %}
+<!---------------------------------------------------------------------------- CONTACT PAGE ---------------------------------------------------------------------------->
 
-{% block compsci %}
-
-{% endblock %}
+{% block contact %} {% endblock %}
 
 </body>
 </html>
@@ -123,20 +110,20 @@ nav {
   background-color: #343a40;
   color: #444;
   cursor: pointer;
-  padding: 18px;
-  width: 65px;
+  padding: 5px; 
+  width: 40px; 
   border: none;
   text-align: left;
   outline: none;
   font-size: 15px;
 }
-
 .navbar-toggler-icon {
     margin-left:1%;
 }
 
 .active, .navbar-toggler:hover {
   background-color: #355070 ;
+  color: #444;
   border:none;
 }
 

@@ -27,6 +27,10 @@ def login():
 def register():
     return render_template('register.html')
 
+@app.route('/contact')
+def contact():
+    return render_template('contact.html')
+
 @app.route('/mathematics')
 def math():
     return render_template('Subjects/mathematics.html')
@@ -77,6 +81,8 @@ def dashboard():
 def logout():
     session.pop('logged_in', None)
     return redirect(url_for('login'))
+
+
 
 if __name__ == '__main__':
     app.run(debug=True)

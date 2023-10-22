@@ -8,6 +8,9 @@
  
 
 <link rel="stylesheet" href="{{ url_for('static', filename='homepagestyling.css') }}" crossorigin="anonymous">
+<script src="{{ url_for('static', filename='totopbottom.js') }}"></script>
+
+<div id="jumper"></div>
 
 <center> <h2 id="abouth2"> <b> Welcome to MSCIPro! </b></h2></center> 
 <center> <h5 id="abouth5"> Welcome! Here at MSCIPro, we provide top-tier STEM resources for both students and educators. </h5> </center>
@@ -17,6 +20,7 @@
 {% block image %}
 
 <img src="https://i0.wp.com/quivivecottage.co.uk/wp-content/uploads/2015/10/Banner-1920x230.png?ssl=1" id="bannerimg" draggable="False"> </img>
+
 
 {% endblock %}
 
@@ -34,7 +38,7 @@
         <li> 1000+ Programming concepts</li>
         <li> Mock interviews </li>
         <li> Programming Playgrounds </li>
-        <li> Competion/Contest Practice and Prepartion</li>
+        <li> Competion/Contest Practice and Preparation</li>
         <li> Online help forum </li>
     </ul>
 
@@ -72,13 +76,20 @@
 </div>
 
 <div class="totop">
-    <button id="button_totop"> <a href="#abouth2" > To Top </a> </button> 
+    <button data-target="jumper" id="button_totop"> To Top </button> 
 </div>
 
 </center>
 
 {% endblock %}
 
-{% block button %} <center> <a href="/login"> <button id="started" draggable="false"> Get Started </button> </center> </a> {% endblock %}
+{% block button %} 
+
+<center> <a href="/login"> <button id="started" draggable="false"> Get Started </button> </a> </center>  
+
+
+{% endblock %}
+
+
 
 
