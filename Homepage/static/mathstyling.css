@@ -2,6 +2,11 @@
 
 /* font-family: 'Raleway', sans-serif; */
 
+
+::-webkit-scrollbar {
+    display:none;
+}
+
 html, body {
     background-color:black;
     scroll-behavior: smooth;
