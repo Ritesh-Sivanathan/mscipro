@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Math Problem Generator</title>
+    <script src="grade1practice.js"></script>
+</head>
+<body>
+    <h1>Math Problem Generator</h1>
+    <button id="generateBtn">Generate Problem</button>
+    <p id="problem"></p>
+    <h2 id="score"></h2>
+    <input type="text" id="userAnswer" placeholder="Your Answer">
+    <button id="checkBtn">Check Answer</button>
+    <p id="result"></p>
+</body>
+</html>
+
+<script>
+document.addEventListener("DOMContentLoaded", function () {
+    const generateBtn = document.getElementById("generateBtn");
+    const problemText = document.getElementById("problem");
+    const userAnswer = document.getElementById("userAnswer");
+    const checkBtn = document.getElementById("checkBtn");
+    const resultText = document.getElementById("result");
+
+    const scoredisplay = document.getElementById("score")
+
+    generateBtn.addEventListener("click", function () {
+        const num1 = Math.floor(Math.random() * 10); // Adjust the range as needed
+        const num2 = Math.floor(Math.random() * 10);
+
+        const problem = `${num1} + ${num2} = ?`;
+        
+    });
+
+    checkBtn.addEventListener("click", function () {
+        const userProvidedAnswer = parseInt(userAnswer.value, 10);
+        const problemParts = problemText.textContent.split(" ");
+        const correctAnswer = parseInt(problemParts[0]) + parseInt(problemParts[2]);
+
+        if (userProvidedAnswer === correctAnswer) {
+            resultText.textContent = "Correct!";
+        } else {
+            resultText.textContent = "Incorrect. Try again.";
+        }
+    });
+});
+</script>

@@ -38,5 +38,13 @@ def science():
 def programming():
     return render_template('Subjects/programming/programming.html')
 
+
+# --------------------------------- MATH ---------------------------------#
+
+@app.route('/gr1practice')
+def gr1prac():
+    return render_template('Subjects/math/Grade 1 PP/grade1practice.html')
+
+
 if __name__ == '__main__':
     app.run(debug=True)
