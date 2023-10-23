@@ -8,7 +8,6 @@
     <h1>Math Problem Generator</h1>
     <button id="generateBtn">Generate Problem</button>
     <p id="problem"></p>
-    <h2 id="score"></h2>
     <input type="text" id="userAnswer" placeholder="Your Answer">
     <button id="checkBtn">Check Answer</button>
     <p id="result"></p>
@@ -24,11 +23,11 @@ document.addEventListener("DOMContentLoaded", function () {
     const resultText = document.getElementById("result");
 
     generateBtn.addEventListener("click", function () {
-        const num1 = Math.floor(Math.random() * 10); // Adjust the range as needed
-        const num2 = Math.floor(Math.random() * 10);
+        const num1 = Math.floor(Math.random() * 500); // Adjust the range as needed
+        const num2 = Math.floor(Math.random() * 500);
 
         const problem = `${num1} + ${num2} = ?`;
-        
+        problemText.textContent = problem;
     });
 
     checkBtn.addEventListener("click", function () {
@@ -38,6 +37,15 @@ document.addEventListener("DOMContentLoaded", function () {
 
         if (userProvidedAnswer === correctAnswer) {
             resultText.textContent = "Correct!";
+            const num1 = Math.floor(Math.random() * 500); // Adjust the range as needed
+            const num2 = Math.floor(Math.random() * 500);
+            const problem = `${num1} + ${num2} = ?`;
+            problemText.textContent = problem;
+            userAnswer.addEventListener('submit', (e) => {
+                e.preventDefault();
+                userAnswer.reset();
+                output.innerHTML += ""
+            })
         } else {
             resultText.textContent = "Incorrect. Try again.";
         }
