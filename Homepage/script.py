@@ -36,6 +36,10 @@ def science():
 def programming():
     return render_template('Subjects/programming/programming.html')
 
+@app.route('/p')
+def physics():
+    return render_template('Subjects/science/rigidbody.html')
+
 
 # --------------------------------- MATH ---------------------------------#
 
