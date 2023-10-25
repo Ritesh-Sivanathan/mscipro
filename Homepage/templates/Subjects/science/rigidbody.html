@@ -40,14 +40,17 @@ class Ball {
 
   update() {
     // Apply gravity
-    this.ay = 0.5; // acceleration due to gravity
+    this.ay = 1; // acceleration due to gravity
 
+    function sleep(ms) {
+    return new Promise(resolve => setTimeout(resolve, ms));
+    }
     // Update velocity
     this.vx += this.ax;
     this.vy += this.ay;
 
     // Update position
-    this.x += this.vx;
+    this.x += Math.random(1,100);
     this.y += this.vy;
 
     // Check for collision with the ground
@@ -55,14 +58,31 @@ class Ball {
       this.y = canvas.height - this.radius;
       this.vy *= -0.8; // reverse velocity and apply some restitution
     }
+
+    if (this.y + this.radius >= canvas.width) {
+      this.y = canvas.height - this.radius;
+      this.vy *= -0.8;
+    }
+
+    if (this.x + this.radius >= canvas.width) {
+      this.x = canvas.width - this.radius;
+      this.x = 0;
+    }
   }
 
   draw() {
     ctx.beginPath();
     ctx.arc(this.x, this.y, this.radius, 0, Math.PI * 2);
     ctx.closePath();
-    ctx.fillStyle = 'red';
+    let x = Math.random(0,1);
+    if (x == 0) {
+      ctx.fillStyle = 'purple';
+      ctx.fill();
+    } else {
+      ctx.fillStyle = 'black';
     ctx.fill();
+    }
+    
   }
 }
 
@@ -73,6 +93,11 @@ const balls = [];
 balls.push(new Ball(100, 100, 20, 1));
 balls.push(new Ball(200, 100, 30, 2));
 balls.push(new Ball(300, 100, 40, 3));
+balls.push(new Ball(300, 15, 40, 3));
+balls.push(new Ball(400, 45, 40, 4));
+balls.push(new Ball(500, 500, 40, 6));
+balls.push(new Ball(600, 150, 40, 5));
+
 
 // Track the ball being dragged
 let draggingBall = null;
