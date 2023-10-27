@@ -1,12 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>Rigid Body Physics Simulation</title>
-  <style>
-    canvas {
-      border: 1px solid black;
-    }
-  </style>
+  <title>Rigid Body Physics Simulation</title>  
 </head>
 <body>
   <canvas id="canvas" width="800" height="600"></canvas>
@@ -14,161 +9,12 @@
 </body>
 </html>
 
+<style>
+  canvas {
+    border: 1px solid black;
+  }
+</style>
+
 <script>
-    // Get the canvas element
-const canvas = document.getElementById('canvas');
-const ctx = canvas.getContext('2d');
 
-// Define the Ball class
-class Ball {
-  constructor(x, y, radius, mass) {
-    this.x = x;
-    this.y = y;
-    this.radius = radius;
-    this.mass = mass;
-    this.vx = 0; // velocity along the x-axis
-    this.vy = 0; // velocity along the y-axis
-    this.ax = 0; // acceleration along the x-axis
-    this.ay = 0; // acceleration along the y-axis
-
-    // Flag to track if the ball is being dragged
-    this.isDragging = false;
-    // Offset from the ball's center to the mouse position
-    this.dragOffsetX = 0;
-    this.dragOffsetY = 0;
-  }
-
-  update() {
-    // Apply gravity
-    this.ay = 1; // acceleration due to gravity
-
-    function sleep(ms) {
-    return new Promise(resolve => setTimeout(resolve, ms));
-    }
-    // Update velocity
-    this.vx += this.ax;
-    this.vy += this.ay;
-
-    // Update position
-    this.x += Math.random(1,100);
-    this.y += this.vy;
-
-    // Check for collision with the ground
-    if (this.y + this.radius >= canvas.height) {
-      this.y = canvas.height - this.radius;
-      this.vy *= -0.8; // reverse velocity and apply some restitution
-    }
-
-    if (this.y + this.radius >= canvas.width) {
-      this.y = canvas.height - this.radius;
-      this.vy *= -0.8;
-    }
-
-    if (this.x + this.radius >= canvas.width) {
-      this.x = canvas.width - this.radius;
-      this.x = 0;
-    }
-  }
-
-  draw() {
-    ctx.beginPath();
-    ctx.arc(this.x, this.y, this.radius, 0, Math.PI * 2);
-    ctx.closePath();
-    let x = Math.random(0,1);
-    if (x == 0) {
-      ctx.fillStyle = 'purple';
-      ctx.fill();
-    } else {
-      ctx.fillStyle = 'black';
-    ctx.fill();
-    }
-    
-  }
-}
-
-// Create an array to hold the balls
-const balls = [];
-
-// Create some balls
-balls.push(new Ball(100, 100, 20, 1));
-balls.push(new Ball(200, 100, 30, 2));
-balls.push(new Ball(300, 100, 40, 3));
-balls.push(new Ball(300, 15, 40, 3));
-balls.push(new Ball(400, 45, 40, 4));
-balls.push(new Ball(500, 500, 40, 6));
-balls.push(new Ball(600, 150, 40, 5));
-
-
-// Track the ball being dragged
-let draggingBall = null;
-
-// Mouse event listeners
-canvas.addEventListener('mousedown', handleMouseDown);
-canvas.addEventListener('mousemove', handleMouseMove);
-canvas.addEventListener('mouseup', handleMouseUp);
-
-function handleMouseDown(event) {
-  const mouseX = event.clientX - canvas.offsetLeft;
-  const mouseY = event.clientY - canvas.offsetTop;
-
-  // Check if any ball is being clicked
-  for (let i = balls.length - 1; i >= 0; i--) {
-    const ball = balls[i];
-
-    // Calculate the distance between the mouse and the ball's center
-    const dx = mouseX - ball.x;
-    const dy = mouseY - ball.y;
-    const distance = Math.sqrt(dx * dx + dy * dy);
-
-    // Check if the click is within the ball's radius
-    if (distance <= ball.radius) {
-      draggingBall = ball;
-      draggingBall.isDragging = true;
-
-      // Calculate the offset between the ball's center and the mouse position
-      draggingBall.dragOffsetX = mouseX - draggingBall.x;
-      draggingBall.dragOffsetY = mouseY - draggingBall.y;
-
-      break;
-    }
-  }
-}
-
-function handleMouseMove(event) {
-  if (draggingBall) {
-    const mouseX = event.clientX - canvas.offsetLeft;
-    const mouseY = event.clientY - canvas.offsetTop;
-
-    // Update the ball's position based on the mouse movement
-    draggingBall.x = mouseX - draggingBall.dragOffsetX;
-    draggingBall.y = mouseY - draggingBall.dragOffsetY;
-  }
-}
-
-function handleMouseUp() {
-  if (draggingBall) {
-    draggingBall.isDragging = false;
-    draggingBall = null;
-  }
-}
-
-// Animation loop
-function animate() {
-  // Clear the canvas
-  ctx.clearRect(0, 0, canvas.width, canvas.height);
-
-  // Update and draw each ball
-  balls.forEach(ball => {
-    if (!ball.isDragging) {
-      ball.update();
-    }
-    ball.draw();
-  });
-
-  // Request the next animation frame
-  requestAnimationFrame(animate);
-}
-
-// Start the animation loop
-animate();
 </script>
