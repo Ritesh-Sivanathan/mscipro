@@ -54,7 +54,7 @@ html, body {
 
 
 
-#grwork, #exams, #pracprob, #ofgrwork, #rsrcs {
+#grwork, #exams, #ourresources, #ofgrwork, #rsrcs {
     height: 50%;
     margin-top:1%;
     width: 18%;
@@ -62,7 +62,7 @@ html, body {
     border: 5px solid rgb(0, 61, 0);
 }
 
-.grworklist, .examslist, .pracproblist, .ofgrworklist {
+.grworklist, .examslist, .ourresourcelist, .ofgrworklist {
     margin-top:5%;
     font-size:195%;
 }

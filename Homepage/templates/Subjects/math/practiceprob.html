@@ -1,0 +1,68 @@
+{% extends 'base.html' %}
+
+{% block title %} Math Problem Generator {% endblock %}
+
+{% block arithmetic %}
+    <script src="{{ url_for('static', filename='Subject Scripts/math/problemgen.js') }}"></script>
+
+<body class="aribody">
+    <center>
+        <h1 class="header"> <u> Math Problem Generator </u> </h1>
+
+        <h3 id="difficulty"> Difficulty: None (to update, generate a problem) </h3>
+        <h3 id="score"> Score: 0 </h2>
+
+        <button id="generateBtn">Generate Problem</button>
+        <p id="problem"></p>
+        <input type="text" id="userAnswer" placeholder="Your Answer">
+        <button id="checkBtn">Check Answer</button>
+        <p id="result"></p>
+
+        
+
+        <div class="dropdown">
+            <select id="digit-select"> 
+                <option value="single-digit"> Single Digit </option>
+                <option value="double-digit"> Double Digit </option>
+                <option value="triple-digit"> Triple Digit </option>
+                <option value="quadruple-digit"> Quadruple Digit </option>
+            </select>
+        </div>
+
+    </center>
+</body>
+</html>
+
+<style>
+
+    button, input {
+        border-radius:10px;
+        padding:5px;
+    }
+
+    .aribody {
+        background-color: black;
+        color:white;
+    }
+
+    .header {
+        margin-top:5%;
+    }
+
+    #generateBtn {
+        margin-top:5%;
+        background-color:grey;
+        color:whitesmoke;
+    }
+
+    .dropdown {
+        margin-top:2.5%;
+    }
+
+    p  {
+        font-size:250%;
+    }
+
+</style>
+
+{% endblock %}
