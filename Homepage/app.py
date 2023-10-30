@@ -1,23 +1,15 @@
 # https://www.geeksforgeeks.org/login-and-registration-project-using-flask-and-mysql/
 
+# ! TODO: FIX THE GITHUB PAGES NOT WORKING
+
 from flask import Flask, render_template, request, redirect, url_for, session
-from flask_sqlalchemy import SQLAlchemy
-from flask_migrate import Migrate
+
+
 
 
 app = Flask(__name__)
 
-migrate = Migrate(app, db)  # 'db' should be your SQLAlchemy database instance
-app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///your_database.db'
-app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False  # Disable tracking modifications
-db = SQLAlchemy(app)
-
-
-
-class User(db.Model):
-    id = db.Column(db.Integer, primary_key=True)
-    username = db.Column(db.String(80), unique=True, nullable=False)
-    email = db.Column(db.String(120), unique=True, nullable=False)
+app.config['TEMPLATE_FOLDER'] = 'templates'
 
 @app.route('/')
 def index():
