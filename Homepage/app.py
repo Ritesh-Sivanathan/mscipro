@@ -3,12 +3,10 @@
 # ! TODO: FIX THE GITHUB PAGES NOT WORKING
 
 from flask import Flask, render_template, request, redirect, url_for, session
-
-
-
+from flask_frozen import Freezer
 
 app = Flask(__name__)
-
+freezer = Freezer(app)
 app.config['TEMPLATE_FOLDER'] = 'templates'
 
 @app.route('/')
@@ -63,3 +61,4 @@ def gr1prac():
 
 if __name__ == '__main__':
     app.run(debug=True)
+    freezer.freeze()
