@@ -96,6 +96,10 @@ html {
     background-color: black;
 }
 
+body {
+    display: none;
+}
+
 nav {
     font-family: 'Raleway', sans-serif;
     font-size:130%;
@@ -105,6 +109,7 @@ nav {
     
     border-bottom: 10px solid #355070;
     background-color: black;
+    box-shadow: 0 0 10px rgb(255, 255, 255);
     
 }
 
@@ -127,10 +132,15 @@ nav {
     margin-left:1%;
 }
 
-.active, .navbar-toggler:hover {
-  background-color: #355070 ;
-  color: #444;
-  border:none;
+/* Set the default opacity for all navbar links */
+.navbar-nav .nav-link {
+  opacity: 1; /* Buttons are fully opaque by default */
+  transition: opacity 0.3s; /* Add a smooth transition effect */
+}
+
+/* Change opacity of navbar links when a link is hovered */
+.navbar-nav:hover .nav-link:not(:hover) {
+  opacity: 0.2; /* Reduce opacity for non-hovered links when any link is hovered */
 }
 
 .content {
@@ -157,4 +167,9 @@ nav {
     }
   });
 }
+
+window.addEventListener("load", function() {
+    document.body.style.display = "block";
+});
+
 </script>
