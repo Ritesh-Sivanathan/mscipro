@@ -12,4 +12,9 @@ This website will contain a few pages, only regarding Mathematics, Science and P
 - Python --> Flask
 - Lots more tools to come
 
-Contributors welcome
+Required dependencies/libraries:
+
+Flask
+- pip install flask
+Frozen Flask
+- pip install frozen-flask
