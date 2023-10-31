@@ -145,12 +145,12 @@ li {
 }
 
 .square-text {
-    width: 400px; /* Adjust the width as needed */
-    background-color: black; /* Background color for the square */
-    text-align: center; /* Center-align text horizontally */
+    width: 400px;
+    background-color: black; 
+    text-align: center; 
     margin-left:350px;
     margin-top:-26vh;
-    font-size: 16px; /* Adjust font size as needed */
+    font-size: 16px;
     display:flex;
   }
 

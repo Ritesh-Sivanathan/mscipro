@@ -1,5 +1,5 @@
 document.addEventListener('DOMContentLoaded', function () {
-    var links = document.querySelectorAll('button[data-target]'); // Change 'button' to the appropriate element type, e.g., 'a' if using anchor tags.
+    var links = document.querySelectorAll('button[data-target]'); 
   
     links.forEach(function (link) {
       link.addEventListener('click', function (event) {

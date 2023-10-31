@@ -9,15 +9,15 @@
 
 @media (max-width: 800px) {
     .link-container .boxes {
-      flex-direction: column; /* Stack icons vertically */
-      align-items: center; /* Center align the icons */
+      flex-direction: column; 
+      align-items: center; 
     }
 
     .link-container a {
-      display: flex; /* Use flex display for the icon and text alignment */
-      align-items: center; /* Center align the icon and text */
-      padding-top: 15px; /* Adjust the spacing */
-      padding-bottom: 15px; /* Add spacing at the bottom */
+      display: flex; 
+      align-items: center; 
+      padding-top: 15px; 
+      padding-bottom: 15px;
     }
   }
 
