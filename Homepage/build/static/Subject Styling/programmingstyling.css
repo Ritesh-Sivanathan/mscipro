@@ -1,0 +1,67 @@
+@import url('https://fonts.googleapis.com/css2?family=Mukta:wght@600&family=Poppins:wght@300&display=swap');
+
+
+/* font-family: 'Raleway', sans-serif; */
+
+::-webkit-scrollbar {
+    display:none;
+}
+
+html, body {
+    background-color:black;
+    scroll-behavior: smooth;
+    font-family: 'Mukta', sans-serif;
+}
+
+#btn-top, #btn-bottom {
+    margin-top:5%;
+    border: 2px solid black;
+    border-radius: 5px;
+    padding:5px;
+}
+
+.boxes {
+    display:flex;
+    justify-content: space-between;    
+}
+
+@media (max-width: 800px) {
+    .boxes {
+        display:block;
+        width:450%;
+        margin-left:10%;
+
+    }
+
+    ::-webkit-scrollbar {
+        display:none;
+    }
+}
+
+@media screen and (max-width: 1000px) {
+    #btn-bottom, #btn-top{ 
+        display:block;
+    }
+}
+    
+    @media screen and (min-width:1001px) {
+        #btn-bottom, #btn-top{ 
+            display:none;
+        }
+    }
+
+
+#grwork, #exams, #pracprob, #ofgrwork, #rsrcs {
+    height: 50%;
+    margin-top:2%;
+    width: 18%;
+    background-color: grey;
+    border: 10px solid rgb(0, 126, 0);
+    border-radius:10px;
+    box-shadow: 0 0 20px rgb(255, 255, 255);
+}
+
+.grworklist, .examslist, .pracproblist, .ofgrworklist {
+    margin-top:5%;
+    font-size:195%;
+}
