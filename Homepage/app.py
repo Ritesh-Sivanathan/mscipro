@@ -1,5 +1,8 @@
 # https://www.geeksforgeeks.org/login-and-registration-project-using-flask-and-mysql/
 
+# https://www.pythonanywhere.com/user/riteshsivanathan/webapps/#tab_id_riteshsivanathan_pythonanywhere_com
+
+
 # ! TODO: FIX THE GITHUB PAGES NOT WORKING
 
 from flask import Flask, render_template, request, redirect, url_for, session
