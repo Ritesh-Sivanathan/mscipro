@@ -37,12 +37,12 @@ body {
         margin-top:11%;
         font-size:150%;
         font-family: 'Raleway', sans-serif;
-        color:#6b6b6b;
+        color:#545E75;
     }
     
     #abouth5{
         font-family: 'Raleway', sans-serif;
-        color:#6b6b6c;
+        color:#545E75;
         font-size:small;
         padding:5px;
     }
@@ -102,12 +102,12 @@ li {
 .subject_container img {
     border-radius: 30px;
     border:2px solid white;
-    
 }
 
 .subjecttitle {
     display:flexbox;
-    margin-top:5%
+    margin-top:5%;
+    color:white;
 }
 
 #button_totop {

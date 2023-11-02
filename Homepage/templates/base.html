@@ -48,6 +48,9 @@
                 <li class="nav-item">
                     <a class="nav-link" href="contact"> Contact Us </a>
                 </li>
+                <li class="nav-item">
+                    <button class="nav-link mode-button" id="mode-button"> Colour Mode</button>
+                </li>
             </ul>
         </div>
     </nav>
@@ -100,6 +103,16 @@ html {
 
 body {
     display: none;
+}
+
+.mode-button {
+    background-color: #343a40; /* Set background color */
+    color: rgba(192, 192, 192, 0.973); /* Set text color */
+    border: none; /* Remove the border */
+    padding: 5px 15px; /* Adjust padding to match other links */
+    border-radius: 5px; /* Add rounded corners for button appearance */
+    cursor: pointer; /* Add pointer cursor to indicate it's clickable */
+    margin-top:1.9%;
 }
 
 nav {
@@ -155,8 +168,59 @@ nav {
 </style>
 
 <script>
+
     var coll = document.getElementsByClassName('navbar-toggler');
+    var lightmodes = document.getElementsByClassName('nav-link mode-button');
+    var subjectTitles = document.getElementsByClassName("subjecttitle");
+    var listItems = document.getElementsByTagName('li');
+
     var i;
+    var lightstate = 0;
+
+    
+
+    for (var i = 0; i < lightmodes.length; i++) {
+        lightmodes[i].addEventListener("click", function () {
+            if (lightstate === 0) {
+                document.getElementById("mainpage").style.backgroundColor = "white";
+                document.getElementById("abouth5").style.color = "black";
+                document.getElementById("abouth2").style.color = "black";
+                document.getElementById("bannerimg").style.boxShadow = "0 0 30px black";
+
+                document.getElementById("started").style.backgroundColor = "grey"
+                document.getElementById("started").style.color = "white"
+
+                for (var i = 0; i < subjectTitles.length; i++) {
+                    subjectTitles[i].style.color = "#6b6b6b";
+                }
+
+                for (var a = 0; i < listItems.length; i++) {
+                    listItems[i].style.color = 'black';
+                }
+
+                lightstate = 1;
+
+            } else {
+                document.getElementById("mainpage").style.backgroundColor = "black";
+                document.getElementById("abouth5").style.color = "#545E75";
+                document.getElementById("abouth2").style.color = "#545E75";
+                document.getElementById("bannerimg").style.boxShadow = "0 0 30px white";
+
+                document.getElementById("started").style.backgroundColor = "white"
+                document.getElementById("started").style.color = "black";
+
+                for (var i = 0; i < subjectTitles.length; i++) {
+                    subjectTitles[i].style.color = "white";
+                }
+
+                for (var a = 0; i < listItems.length; i++) {
+                    listItems[i].style.color = 'white';
+                }
+
+                lightstate = 0;
+            }
+        });
+    }
 
     for (i = 0; i < coll.length; i++) {
   coll[i].addEventListener("click", function() {
