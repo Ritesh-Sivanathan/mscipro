@@ -172,7 +172,7 @@ nav {
     var coll = document.getElementsByClassName('navbar-toggler');
     var lightmodes = document.getElementsByClassName('nav-link mode-button');
     var subjectTitles = document.getElementsByClassName("subjecttitle");
-    var listItems = document.getElementByClassName("");
+    var listItems = document.getElementsByTagName('li');
 
     var i;
     var lightstate = 0;
@@ -194,8 +194,8 @@ nav {
                     subjectTitles[i].style.color = "#6b6b6b";
                 }
 
-                for (var a = 0; i < document.getElementsByTagName('li').length; i++) {
-                    document.getElementsByTagName('li')[i].style.color = 'black';
+                for (var a = 0; i < listItems.length; i++) {
+                    listItems[i].style.color = 'black';
                 }
 
                 lightstate = 1;
