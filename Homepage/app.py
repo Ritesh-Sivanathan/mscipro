@@ -10,7 +10,6 @@ from flask_sqlalchemy import SQLAlchemy
 from functools import wraps
 
 
-
 app = Flask(__name__)
 app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///your_database.db'
 db = SQLAlchemy(app)
@@ -57,7 +56,7 @@ def login():
         user = db.session.query(User).filter_by(username=username, password=password).first()
         if user:
             session['user_id'] = user.id
-            return "Valid"  # You can redirect or return some response for a successful login
+            return render_template('Subjects/math/mathematics.html')
         else:
             return "Invalid"  # Handle invalid login here
     else:
