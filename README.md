@@ -1,20 +1,74 @@
-# scienceandmathwebsite
+# MSCIPro
 
-STEM WEBSITE - MSCIPro
+## Contents
+### 1 ... Introduction & Information
+### 2 ... Dependencies
+### 3 ... Current Languages, Tools and Frameworks
+### 4 ... Future Languages, Tools and Frameworks
+### 5 ... Structure
 
-This website will contain a few pages, only regarding Mathematics, Science and Programming. It will be a "learning" platform with resources put up which can be accessed by anyone. The site will also provide pages where people can discuss these topics.
+# 1 - **Introduction & Information**
 
-**Languages/Frameworks/Things included:**
+### Purpose:
+MSCIPro is a tool for specifically STEM students. Currently, MSCIPro is limited to website-only.
+It provides valuable resources and information, like problem generators for STEM topics and related sub-topics.
+It also provides links to external resources that could be of use.
 
-- HTML 
+### About:
+
+Website construction started on August 28th, 2023. The website was created as a side project, which is being used to learn various languages and frameworks used.
+
+# 2 - Dependencies 
+
+### Currently used dependencies and versions
+
+#### Last updated: **November 5th, 2023**
+
+- Python = 3.11.6 
+- Flask = 2.3.3 ``` pip install Flask ```
+- Flask-SQLAlchemy = 3.1.1 ``` pip install Flask-SQLAlchemy ```
+- SQLAlchemy = 2.0.21 ``` pip install SQLAlchemy ```
+- Frozen-Flask = 0.18 ``` pip install frozen-flask ```
+- alembic = 1.12.1 ``` pip install alembic ```
+- Flask-Migrate = 4.0.5 ``` pip install Flask-Migrate ```
+- ipython = 8.15.0 ``` pip install ipython ```
+- numpy = 1.25.2 ``` pip install numpy ```
+- requests = 2.31.0 ``` pip install requests```
+
+
+# 3 - Current Languages, Tools and Frameworks
+
+### Languages
+
+- HTML
 - CSS
+- Python
 - Javascript
-- Python --> Flask
-- Lots more tools to come
 
-Required dependencies/libraries:
+### Frameworks
 
-Flask
-- pip install flask
-Frozen Flask
-- pip install frozen-flask
+- Flask
+
+### Tools
+
+- SQLite
+
+# 4 - Future Languages, Tools and Frameworks
+
+### Languages
+
+- All current languages
+- +++
+
+### Frameworks
+
+- React (JS)
+- Vue.js
+- Angular
+- NextJS
+- Django (not certain)
+- Ruby on Rails
+
+
+
+
