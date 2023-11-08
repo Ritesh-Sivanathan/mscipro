@@ -10,6 +10,7 @@ html, body {
     background-color:black;
     scroll-behavior: smooth;
     font-family: 'Mukta', sans-serif;
+    overflow-x:hidden;
 }
 
 #btn-top, #btn-bottom {
