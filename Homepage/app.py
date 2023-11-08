@@ -83,7 +83,7 @@ def contact():
     return render_template('contact.html')
 
 @app.route('/mathematics')
-@login_required
+# @login_required
 def math():
     return render_template('Subjects/math/mathematics.html')
 
@@ -107,7 +107,7 @@ def physics():
 
 # MATH - Arithmetic
 
-@app.route('/mathematics/arithmetic')
+@app.route('/arithmetic')
 def gr1prac():
     return render_template('Subjects/math/practiceprob.html')
 
