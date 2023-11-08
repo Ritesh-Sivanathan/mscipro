@@ -74,13 +74,13 @@ Website construction started on August 28th, 2023. The website was created as a 
 Visual Website Structure:
 
 ## Homepage
-### Mathematics
-#### Arithmetic Generator
-## Science
-## Programming
-## Login
-## Register
-## Contact Us
+#### Mathematics
+###### Arithmetic Generator
+#### Science
+#### Programming
+#### Login
+#### Register
+#### Contact Us
 
 Each of these pages, excluding the arithmetic generator are accessible through any of the pages.
 
@@ -89,13 +89,13 @@ Logic Website Structure:
 All pages and sub-pages are children of the base.html parent.
 
 ## base.html
-### homepage
-### mathematics
-### science
-### programming
-### login
-### register
-### contact us
+#### - homepage
+#### - mathematics
+#### - science
+#### - programming
+#### - login
+#### - register
+#### - contact us
 
 Logically, all webpages other than base.html are of equal class. Homepage is the same class as mathematics, for example, because it extends the base.html template. The landing page is homepage.html, however.
 
