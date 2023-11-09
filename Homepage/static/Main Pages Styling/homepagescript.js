@@ -1,8 +1,13 @@
+window.onload = function() {
+    var modal = document.getElementById('myModal');
+    var span = document.getElementsByClassName("close")[0];
 
-const hidebutton = document.getElementById("hide");
-const scrollingtext = document.getElementById("notifier");
+    if (localStorage.getItem('modalShown') !== 'true') {
+        modal.style.display = "block";
+        localStorage.setItem('modalShown', 'true');
+    }
 
-hidebutton.addEventListener("click", function() {
-    hidebutton.style.display = "none";
-    scrollingtext.style.display = "none";
-});
+    span.addEventListener("click", function() {
+        modal.style.display = "none";
+    });
+}

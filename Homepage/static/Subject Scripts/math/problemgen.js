@@ -54,7 +54,6 @@ document.addEventListener("DOMContentLoaded", function () {
             resultText.textContent = "Correct!";
             score++;
 
-            // Generate a new problem after a correct answer
             getSelectedOption();
         } else {
             resultText.textContent = "Incorrect. Try again.";
