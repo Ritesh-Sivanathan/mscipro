@@ -2,7 +2,7 @@
 /* marquee */
 
 @import url('https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@300&family=Raleway:wght@300&display=swap');
-
+@import url('https://fonts.googleapis.com/css2?family=Kanit:ital,wght@1,200&display=swap');
 
 
 ::-webkit-scrollbar {
@@ -16,6 +16,10 @@ body {
 }
 
 /* DO NOT MOVE THIS IS GET STARTED pulsing animation */
+
+p {
+    font-family: 'Kanit', sans-serif;
+}
 
 @keyframes pulse {
     0% {
@@ -74,15 +78,14 @@ body {
             position:relative;
             width:100%;
             height:30vh;
-        
-        
+                        
             -webkit-touch-callout: none;
             -webkit-user-select: none;
             -khtml-user-select: none;
             -moz-user-select: none;
             -ms-user-select: none;
             user-select: none;
-            border-bottom:25px solid #355070;
+            border-bottom: 25px solid #355070;            
             box-shadow: 0 0 30px rgb(255, 255, 255);
         }
     }
