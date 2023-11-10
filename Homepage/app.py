@@ -111,5 +111,9 @@ def physics():
 def gr1prac():
     return render_template('Subjects/math/practiceprob.html')
 
+@app.route('/calculator')
+def calculator():
+    return render_template('Subjects/math/calculator.html')
+
 if __name__ == '__main__':
     app.run(debug=True)

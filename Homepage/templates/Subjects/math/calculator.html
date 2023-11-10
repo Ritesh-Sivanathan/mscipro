@@ -1,0 +1,108 @@
+{% extends 'base.html' %}
+
+{% block calculator %} 
+
+<center> 
+
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Inconsolata&display=swap">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Digital-7&display=swap">
+
+    <div class="calculator-screen" id="screen"> <center> 0 </center> </div>
+    <div class="calculator-base">
+        <div class="num-btns">
+            <div class="button" onclick="appendToScreen('1')">1</div>
+            <div class="button" onclick="appendToScreen('2')">2</div>
+            <div class="button" onclick="appendToScreen('3')">3</div>
+            <div class="button" onclick="appendToScreen('4')">4</div>
+            <div class="button" onclick="appendToScreen('5')">5</div>
+            <div class="button" onclick="appendToScreen('6')">6</div>
+            <div class="button" onclick="appendToScreen('7')">7</div>
+            <div class="button" onclick="appendToScreen('8')">8</div>
+            <div class="button" onclick="appendToScreen('9')">9</div>
+            <div class="button" onclick="appendToScreen('0')">0</div>
+
+            <div class="button" onclick="appendToScreen('+')">+</div>
+            <div class="button" onclick="appendToScreen('-')">-</div>
+            <div class="button" onclick="appendToScreen('*')">*</div>
+            <div class="button" onclick="appendToScreen('/')">/</div>
+            
+        </div>
+    </div> 
+
+</center>
+
+<script>
+
+var total = 0;
+    var added = 0;
+
+    function appendToScreen(value) {
+        var screen = document.getElementById("screen");
+        var currentContent = screen.innerHTML;
+
+        // Check if the current content is 0, then replace it with the entered value
+        if (currentContent.trim() === '0') {
+            screen.innerHTML = value;
+        } else {
+            // Otherwise, append the value to the existing content
+            screen.innerHTML = currentContent + value;
+        }
+    }
+</script>
+
+<style>
+
+    body {
+        cursor: url('https://www.freeiconspng.com/thumbs/cursor-png/glowing-cursor-2.png'),auto;
+    }
+
+    .calculator-screen {
+        background-color:black;
+        width:32vh;
+        height:10vh;
+        margin-top:10%;
+        color:white;
+        text-align:center;
+        padding:1vh;
+        font-size:5vh;
+    }
+
+    .calculator-base {
+        width: 35vh;
+        height: 55vh;
+        background-color: grey;
+        margin-top: 3%;
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        grid-gap: 5px;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .num-btns {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        grid-gap: 1vh;
+    }
+
+    .button {
+        width: 10vh;
+        height: 10vh;
+        background-color: black;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        color: white;
+        font-size: 5vh;
+        margin-left:15%;
+        font-family: 'Inconsolata', monospace; /* Use Inconsolata from Google Fonts */
+        cursor: pointer;
+
+    }
+
+    #mainpage {
+        background-color: transparent;
+    }
+</style>
+
+{% endblock %}

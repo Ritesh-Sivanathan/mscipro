@@ -50,7 +50,9 @@ html, body {
         }
     }
 
-
+.modal-content li {
+    padding:10px;
+}
 
 
 
