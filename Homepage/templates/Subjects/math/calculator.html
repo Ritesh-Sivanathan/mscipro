@@ -1,11 +1,17 @@
 {% extends 'base.html' %}
 
-{% block calculator %} 
+{% block title %} MSCIPro - Calculator {% endblock %}
 
-<center> 
+{% block calculator %}
+
+<body id="calc-page">
+<center>
 
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Inconsolata&display=swap">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Digital-7&display=swap">
+    <link rel="stylesheet" href="static/Subject Styling/calculatorstyling.css" crossorigin="anonymous">
+
+    <title> MSCIPro - Calculator </title>
 
     <div class="calculator-screen" id="screen"> <center> 0 </center> </div>
     <div class="calculator-base">
@@ -25,84 +31,80 @@
             <div class="button" onclick="appendToScreen('-')">-</div>
             <div class="button" onclick="appendToScreen('*')">*</div>
             <div class="button" onclick="appendToScreen('/')">/</div>
-            
-        </div>
-    </div> 
 
-</center>
+            <div class="button" id="clear" onclick="clearScreen()">CLS</div>
+            <div class="button" onclick="calculate()">=</div>
+
+            <div class="button"></div>
+            <div class="button"></div>
+
+        </div>
+    </div>
+
+    <div id="info">
+        <button style="width:100px;height:40px;" id="close-btn"> &times; </button>
+        <p style="padding-top:30px;"> This is an 11-digit calculator. It functions the same as a regular calculator, just much more basic. More functionality can be found in other calculators (still in development)</p>
+    </div>
+
+  </center>
+</body>  
 
 <script>
+    function isMobileDevice() {
+    return window.innerWidth <= 767; 
+}
 
 var total = 0;
-    var added = 0;
+var added = 0;
+var mainpage = document.getElementById("mainpage");
+var close = document.getElementById("close-btn");
+var infof = document.getElementById("info");
 
-    function appendToScreen(value) {
-        var screen = document.getElementById("screen");
-        var currentContent = screen.innerHTML;
+close.addEventListener("click", function() {
+    infof.style.display = "none";
+})
 
-        // Check if the current content is 0, then replace it with the entered value
-        if (currentContent.trim() === '0') {
-            screen.innerHTML = value;
+if (isMobileDevice()) {
+    mainpage.style.display = "none";
+    alert("Please use a different device with a larger screen to access our calculator.")
+    window.location.href = "/"
+}
+
+function appendToScreen(value) {
+    var screen = document.getElementById("screen");
+
+    if (screen.textContent.length > 11) {
+        alert("Too long! Current maximum is 11 digits!")
+        screen.textContent = 0;
+    } else {
+
+        if (screen.textContent == '0' || screen.textContent == 0) {
+            screen.textContent = "";
+            screen.textContent += value;
         } else {
-            // Otherwise, append the value to the existing content
-            screen.innerHTML = currentContent + value;
+            screen.textContent += value;
+        }
+
+    }
+}
+
+    function clearScreen() {
+        var screen = document.getElementById("screen");
+        screen.textContent = "0";
+    }
+
+    function calculate() {
+        var screen = document.getElementById("screen");
+        var expression = screen.textContent;
+
+        try {
+            var result = eval(expression);
+            screen.textContent = result;
+        } catch (error) {
+            alert("Invalid expression");
+            screen.textContent = "0";
         }
     }
 </script>
-
-<style>
-
-    body {
-        cursor: url('https://www.freeiconspng.com/thumbs/cursor-png/glowing-cursor-2.png'),auto;
-    }
-
-    .calculator-screen {
-        background-color:black;
-        width:32vh;
-        height:10vh;
-        margin-top:10%;
-        color:white;
-        text-align:center;
-        padding:1vh;
-        font-size:5vh;
-    }
-
-    .calculator-base {
-        width: 35vh;
-        height: 55vh;
-        background-color: grey;
-        margin-top: 3%;
-        display: grid;
-        grid-template-columns: repeat(3, 1fr);
-        grid-gap: 5px;
-        justify-content: center;
-        align-items: center;
-    }
-
-    .num-btns {
-        display: grid;
-        grid-template-columns: repeat(3, 1fr);
-        grid-gap: 1vh;
-    }
-
-    .button {
-        width: 10vh;
-        height: 10vh;
-        background-color: black;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        color: white;
-        font-size: 5vh;
-        margin-left:15%;
-        font-family: 'Inconsolata', monospace; /* Use Inconsolata from Google Fonts */
-        cursor: pointer;
-
-    }
-
-    #mainpage {
-        background-color: transparent;
-    }
-</style>
 
 {% endblock %}

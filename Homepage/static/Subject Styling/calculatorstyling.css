@@ -1,0 +1,63 @@
+body {
+    cursor: url('https://www.freeiconspng.com/thumbs/cursor-png/glowing-cursor-2.png'),auto;
+    background-color:black;
+}
+
+#info {
+    margin-left:-65vw;
+    margin-top:-50vh;
+    width:25%;
+    height:25%;
+    font-size:25px;
+    background-color:grey;
+    padding:20px;
+}
+
+.calculator-screen {
+    background-color:rgb(39, 53, 40);
+    width:18vw;
+    height:10vh;
+    margin-top:5%;
+    color:white;
+    text-align:center;
+    padding:1vh;
+    font-size:5vh;
+    border-top-left-radius: 50px;
+    border-top-right-radius: 50px;
+}
+
+.calculator-base {
+    width: 18vw;
+    height: 68vh;
+    background-color: grey;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-gap: 5px;
+    justify-content: center;
+    align-items: center;
+}
+
+.num-btns {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-gap: 1vh;
+}
+
+.button {
+    width: 10vh;
+    height: 10vh;
+    background-color: black;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    font-size: 5vh;
+    margin-left: 28%;
+    font-family: 'Inconsolata', monospace;
+    cursor: pointer;
+}
+
+#mainpage {
+    background-color: transparent;
+}
