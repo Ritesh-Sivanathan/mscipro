@@ -4,8 +4,17 @@
 
 {% block calculator %}
 
+
+
 <body id="calc-page">
+
 <center>
+
+    <div id="info">
+        <button style="width:100px;height:40px;" id="close-btn"> &times; </button>
+        <p style="padding-top:30px;"> This is an 11-digit calculator. It functions the same as a regular calculator, just much more basic. More functionality can be found in other calculators (still in development)</p>
+    </div>
+
 
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Inconsolata&display=swap">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Digital-7&display=swap">
@@ -41,18 +50,20 @@
         </div>
     </div>
 
-    <div id="info">
-        <button style="width:100px;height:40px;" id="close-btn"> &times; </button>
-        <p style="padding-top:30px;"> This is an 11-digit calculator. It functions the same as a regular calculator, just much more basic. More functionality can be found in other calculators (still in development)</p>
-    </div>
+    
 
   </center>
 </body>  
 
 <script>
+
+    // check screen size
+
     function isMobileDevice() {
     return window.innerWidth <= 767; 
 }
+
+// initialize variables either here or from page
 
 var total = 0;
 var added = 0;
@@ -60,9 +71,13 @@ var mainpage = document.getElementById("mainpage");
 var close = document.getElementById("close-btn");
 var infof = document.getElementById("info");
 
+// close modal btn function
+
 close.addEventListener("click", function() {
     infof.style.display = "none";
 })
+
+// alert and close page if user on a mobile device (<767vw)
 
 if (isMobileDevice()) {
     mainpage.style.display = "none";
@@ -70,12 +85,14 @@ if (isMobileDevice()) {
     window.location.href = "/"
 }
 
+// append the entered values to the calculator screen
+
 function appendToScreen(value) {
     var screen = document.getElementById("screen");
 
     if (screen.textContent.length > 11) {
-        alert("Too long! Current maximum is 11 digits!")
-        screen.textContent = 0;
+        alert("Too long! Current maximum is 11 digits!") // display alert to notify user of small screen size
+        screen.textContent = 0; // hide screen or full page
     } else {
 
         if (screen.textContent == '0' || screen.textContent == 0) {
@@ -88,23 +105,30 @@ function appendToScreen(value) {
     }
 }
 
+    // clear calculator screen function
+
     function clearScreen() {
         var screen = document.getElementById("screen");
-        screen.textContent = "0";
+        screen.textContent = "0"; // resets screen (calculator) to a default value of 0
     }
 
-    function calculate() {
+    // calculate entered integers function
+
+    function calculate() { 
         var screen = document.getElementById("screen");
         var expression = screen.textContent;
 
+        // use a try-catch method to check for valid/invalid input
+
         try {
-            var result = eval(expression);
-            screen.textContent = result;
+            var result = eval(expression); // evaluate the entered expression if valid
+            screen.textContent = result; // display result
         } catch (error) {
-            alert("Invalid expression");
-            screen.textContent = "0";
+            alert("Invalid expression"); // display an alert to notify user of invalid expression
+            screen.textContent = "0"; // reset the calculator screen
         }
     }
+    
 </script>
 
 {% endblock %}

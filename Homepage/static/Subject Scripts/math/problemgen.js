@@ -1,4 +1,10 @@
-document.addEventListener("DOMContentLoaded", function () {
+// script for arithmetic/problem generator on MSCIPro's Mathematics page
+
+document.addEventListener("DOMContentLoaded", function () { // check if page is loaded before running script to allow for faster page load times
+
+    // get all buttons and fields that need to be dynamically changed
+    // include difficulty display, score display, generate problem btn, problem space, answer query, check answer button, difficult selection button
+
     const generateBtn = document.getElementById("generateBtn");
     const problemText = document.getElementById("problem");
     const userAnswer = document.getElementById("userAnswer");
@@ -7,7 +13,14 @@ document.addEventListener("DOMContentLoaded", function () {
     const digitSelect = document.getElementById("digit-select");
     const scoreElement = document.getElementById("score");
     const skippedText = document.getElementById("skipped");
+
+
+    // score is set to 0 as default. will be replaced with stored info later
+
     let score = 0;
+
+
+    // find the difficulty selected by user
 
     function getSelectedOption() {
         const selectedValue = digitSelect.value;
@@ -27,13 +40,19 @@ document.addEventListener("DOMContentLoaded", function () {
             updateDifficulty("Quadruple Digit");
         }
 
+        // using max range corresponding to the selected difficulty level with the generate problem function
+
         generateProblem(maxRange);
     }
+
+    // update difficulty after start
 
     function updateDifficulty(difficulty) {
         const headerElement = document.getElementById("difficulty");
         headerElement.textContent = `Selected Difficulty: ${difficulty}`;
     }
+
+    // problem generation function
 
     function generateProblem(maxRange) {
         
@@ -45,6 +64,9 @@ document.addEventListener("DOMContentLoaded", function () {
 
     generateBtn.addEventListener("click", getSelectedOption);
 
+
+    // event listener for check answer btn
+
     checkBtn.addEventListener("click", function () {
         const userProvidedAnswer = parseInt(userAnswer.value, 10);
         const problemParts = problemText.textContent.split(" ");
@@ -54,6 +76,7 @@ document.addEventListener("DOMContentLoaded", function () {
             resultText.textContent = "Correct!";
             score++;
 
+            // Generate a new problem after a correct answer
             getSelectedOption();
         } else {
             resultText.textContent = "Incorrect. Try again.";

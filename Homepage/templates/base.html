@@ -11,9 +11,7 @@
 </head>
 
 
-<body>
-    <!-- Navigation -->
-    <!-- DON'T MOVE, IT WILL BE ON EVERY PAGE -->
+<body> <!-- DO NOT TOUCH -->
     <nav class="navbar navbar-expand-md navbar-dark bg-dark">
         <center>
             <a class="navbar-brand" href="{{ url_for('index') }}">MSCIPro</a>
@@ -55,24 +53,15 @@
         </div>
     </nav>
     
-
-    {% block image %} {% endblock %}
-
-    {% block text %} {% endblock %} 
     
-    {% block about %} {% endblock %}
+    {% block homepage %} {% endblock %}
 
-    {% block showcase %} {% endblock %}
 
-    {% block button %} {% endblock %}
-
-    {% block subjects %} {% endblock %}
-
- <!---------------------------------------------------------------------------- LOGIN AND REGISTER PAGE ---------------------------------------------------------------------------->
+<!------------ LOGIN PAGE ----------------->
 
     {% block login %} {% endblock %}
 
-<!---------------------------------------------------------------------------- SUBJECT PAGES ---------------------------------------------------------------------------->
+<!------------ SUBJECT PAGES ----------------->
 
 {% block math %} {% endblock %}
 
@@ -80,17 +69,15 @@
 
 {% block compsci %} {% endblock %}
 
-<!---------------------------------------------------------------------------- CONTACT PAGE ---------------------------------------------------------------------------->
+<!------------ CONTACT PAGE ----------------->
 
 {% block contact %} {% endblock %}
 
-<!---------------------------------------------------------------------------- CONTACT PAGE ---------------------------------------------------------------------------->
+<!------------ MATH PAGES ----------------->
 
 {% block arithmetic %} {% endblock %}
 
 {% block calculator %} {% endblock %}
-
-{% block admin %} {% endblock %}
 
 </body>
 </html>
