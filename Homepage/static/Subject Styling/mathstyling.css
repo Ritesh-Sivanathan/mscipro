@@ -2,6 +2,17 @@
 
 /* font-family: 'Raleway', sans-serif; */
 
+@keyframes pulse {
+    0% {
+        transform: scale(1);
+    }
+    50% {
+        transform: scale(1.1); 
+    }
+    100% {
+        transform: scale(1);
+    }
+}
 
 ::-webkit-scrollbar {
     display:none;
@@ -66,6 +77,26 @@ html, body {
     border: 10px solid rgb(0, 61, 0);
     border-radius:10px;
     box-shadow: 0 0 20px rgb(255, 255, 255);
+}
+
+#grwork:hover {
+    animation:pulse 2s infinite;
+}
+
+#exams:hover {
+    animation:pulse 2s infinite;
+}
+
+#ourresources:hover {
+    animation:pulse 2s infinite;
+}
+
+#ofgrwork:hover {
+    animation:pulse 2s infinite;
+}
+
+#rsrcs:hover {
+    animation:pulse 2s infinite;
 }
 
 .grworklist, .examslist, .ourresourcelist, .ofgrworklist {

@@ -64,6 +64,10 @@ def gr1prac():
 def calculator():
     return render_template('Subjects/math/calculator.html')
 
+@app.route('/settings')
+def settings():
+    return render_template('settings.html')
+
 if __name__ == '__main__':
     app.run(debug=True)
 
