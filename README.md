@@ -98,3 +98,5 @@ All pages and sub-pages are children of the base.html parent.
 #### - contact us
 
 Logically, all webpages other than base.html are of equal class. Homepage is the same class as mathematics, for example, because it extends the base.html template. The landing page is homepage.html, however.
+
+.
