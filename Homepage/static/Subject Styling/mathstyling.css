@@ -4,15 +4,16 @@
 
 @keyframes pulse {
     0% {
-        transform: scale(1);
+        font-size: 100%;
     }
     50% {
-        transform: scale(1.1); 
+        font-size: 120%;
     }
     100% {
-        transform: scale(1);
+        font-size: 100%;
     }
 }
+
 
 ::-webkit-scrollbar {
     display:none;
@@ -34,7 +35,7 @@ html, body {
 
 .boxes {
     display:flex;
-    justify-content: space-between;    
+    justify-content: space-between;
 }
 
 @media (max-width: 1000px) {
@@ -73,33 +74,27 @@ html, body {
     height: 50%;
     margin-top:2%;
     width: 18%;
-    background-color: grey;
-    border: 10px solid rgb(0, 61, 0);
+    background-color: grey ;
+    border: 2px solid lightblue;
     border-radius:10px;
-    box-shadow: 0 0 20px rgb(255, 255, 255);
+    
 }
 
-#grwork:hover {
-    animation:pulse 2s infinite;
-}
-
-#exams:hover {
-    animation:pulse 2s infinite;
-}
-
-#ourresources:hover {
-    animation:pulse 2s infinite;
-}
-
-#ofgrwork:hover {
-    animation:pulse 2s infinite;
-}
-
-#rsrcs:hover {
-    animation:pulse 2s infinite;
-}
 
 .grworklist, .examslist, .ourresourcelist, .ofgrworklist {
     margin-top:5%;
-    font-size:195%;
+    font-size:150%;
+}
+
+
+#hover-link:hover {
+    animation:pulse 10s infinite;
+    color:black;
+    text-decoration:none;
+    -webkit-text-fill-color: aqua;
+    transform:rotate(-90deg);
+}
+
+#hover-link:not(:hover) {
+    color:skyblue;
 }
