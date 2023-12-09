@@ -35,7 +35,7 @@ html, body {
 
 .boxes {
     display:flex;
-    justify-content: space-between;
+    justify-content: space-evenly;
 }
 
 @media (max-width: 1000px) {

@@ -7,6 +7,9 @@ window.onload = function() { // when site is loaded ...
     var span = document.getElementsByClassName("close")[0];
     var sat = document.getElementById('open-modal');
     var usercl = document.documentElement.style.setProperty("--main-background-color", "green");
+    var cookies = document.cookies;
+
+    console.log(cookies);
 
     sat.addEventListener("click", function() { // add event listener for SAT
         modal.style.display = "block";
@@ -17,5 +20,6 @@ window.onload = function() { // when site is loaded ...
         modal.style.display = "none";
     });
 
+    
 
 }

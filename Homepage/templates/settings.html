@@ -6,6 +6,14 @@
 
 <script>
     
+    var offbtn = document.getElementById("off");
+
+    function cookiecreated() {
+        document.cookie("animationsoff=true")
+    }
+
+    offbtn.addEventListener("click", cookiecreated())
+
 </script>
 
 
