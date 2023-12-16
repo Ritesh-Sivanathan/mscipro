@@ -37,11 +37,14 @@
                 </li>
             </ul>
             <ul class="navbar-nav">
-                <li class="nav-item">
+                <!-- <li class="nav-item">
                     <a class="nav-link" id="log" href="/login">Login </a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link" id="reg" href="/register">Register</a>
+                </li> -->
+                <li class="nav-item">
+                    <a class="nav-link" id="log" href="/development"> Development </a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link" href="contact"> Contact Us </a>
@@ -79,6 +82,8 @@
 {% block arithmetic %} {% endblock %}
 
 {% block calculator %} {% endblock %}
+
+{% block dev %} {% endblock %}
 
 </body>
 </html>
@@ -170,14 +175,6 @@ nav {
     
     var i;
     var lightstate = 0;
-
-    register.addEventListener("click", function () {
-        alert('Login feature is still under development.')
-    })
-
-    login.addEventListener("click", function() {
-        alert('Register feature is still under development.')
-    })
 
     for (var i = 0; i < lightmodes.length; i++) {
         lightmodes[i].addEventListener("click", function () {

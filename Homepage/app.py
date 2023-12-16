@@ -32,7 +32,7 @@ def contact():
     return render_template('contact.html')
 
 @app.route('/mathematics')
-# @login_required
+
 def math():
     return render_template('Subjects/math/mathematics.html')
 
@@ -64,40 +64,13 @@ def gr1prac():
 def calculator():
     return render_template('Subjects/math/calculator.html')
 
+@app.route('/development')
+def development():
+    return render_template('Development Tracking Pages/devtrack.html')
+
 @app.route('/settings')
 def settings():
     return render_template('settings.html')
 
 if __name__ == '__main__':
     app.run(debug=True)
-
-
-# @app.route('/login', methods=['GET', 'POST'])
-# def login():
-#     if request.method == "POST":
-#         username = request.form['username']
-#         password = request.form['password']
-#         user = db.session.query(User).filter_by(username=username, password=password).first()
-#         if user:
-#             session['user_id'] = user.id
-#             return render_template('Subjects/math/mathematics.html')
-#         else:
-#             return "Invalid"  # Handle invalid login here
-#     else:
-#         return render_template('Login & Register/login.html')
-
-# @app.route('/register', methods=['GET', 'POST'])
-# def register():
-#     if request.method == 'POST':
-#         try:
-#             username = request.form['username']
-#             password = request.form['password']
-#             user = User(username=username, password=password)
-#             db.session.add(user)
-#             db.session.commit()
-#             session['user_id'] = user.id  # Store the user ID in the session
-#             return redirect(url_for('index'))
-#         except:
-#             return render_template('Login & Register/register.html')
-#     else:
-#         return render_template('Login & Register/register.html')
