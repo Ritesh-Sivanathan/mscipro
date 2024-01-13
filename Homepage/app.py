@@ -72,5 +72,9 @@ def development():
 def settings():
     return render_template('settings.html')
 
+@app.route('/novicecoding')
+def noviceCoding():
+    return render_template('Subjects/programming/problems/novicecoding.html')
+
 if __name__ == '__main__':
     app.run(debug=True)
