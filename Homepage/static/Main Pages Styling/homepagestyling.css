@@ -194,9 +194,46 @@ li {
     font-size: 28px;
     font-weight: bold;
 }
+
 .close:hover,
+
 .close:focus {
     color: black;
     text-decoration: none;
     cursor: pointer;
+}
+
+.computer-science-facts {
+    margin-top:5%;
+    color:white;
+    width:900px;
+    height:600px;
+}
+
+#overlay-text-computer-science {
+    position:absolute;
+    margin-left:12%;
+    margin-top:14%;
+    font-size: 50px;
+    z-index:1;
+}
+
+
+.computer-science-facts:hover #overlay-text-computer-science {
+        display:none;
+    }
+.computer-science-facts:hover #overlay-text-computer-science-hover {
+        display:flex;
+        margin-top:-10%;
+    }
+
+.computer-science-facts:not(:hover) #overlay-text-computer-science {
+        display:absolute;
+    }
+.computer-science-facts:not(:hover) #overlay-text-computer-science-hover {
+        display:none;
+}
+
+img {
+    z-index:0;
 }
