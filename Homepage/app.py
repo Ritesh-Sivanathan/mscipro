@@ -76,5 +76,10 @@ def settings():
 def noviceCoding():
     return render_template('Subjects/programming/problems/novicecoding.html')
 
+@app.route('/adminportal')
+def adminPortal():
+    return render_template('adminportal.html')
+
+
 if __name__ == '__main__':
     app.run(debug=True)

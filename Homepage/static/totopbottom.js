@@ -17,5 +17,3 @@ document.addEventListener('DOMContentLoaded', function () { // check to see if t
     });
   });
 })
-
-
