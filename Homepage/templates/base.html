@@ -161,55 +161,37 @@ nav {
 
 <script>
 
+    
+
     var register = document.getElementById('reg');
     var login = document.getElementById('log');
     var coll = document.getElementsByClassName('navbar-toggler');
     var lightmodes = document.getElementsByClassName('nav-link mode-button');
     var subjectTitles = document.getElementsByClassName("subjecttitle");
-    var listItems = document.getElementsByTagName('li');
-    
-    var i;
+
     var lightstate = 0;
+
+    if (localStorage.getItem("lightmode") == 1) { updateColoursLight() }
+    if (localStorage.getItem("lightmode") == 0) { updateColoursDark() }
+
+    function updateColoursLight() {
+        document.getElementById("mainpage").style.backgroundColor = "white"; document.getElementById("abouth5").style.color = "#6b6b6b"; document.getElementById("abouth2").style.color = "#6b6b6b"; document.getElementById("started").style.backgroundColor = "grey"; document.getElementById("started").style.color = "white"
+        localStorage.setItem("lightmode", 1)
+    }
+    function updateColoursDark() {
+        document.getElementById("mainpage").style.backgroundColor = "black"; document.getElementById("abouth5").style.color = "#6b6b6b"; document.getElementById("abouth2").style.color = "#6b6b6b"; document.getElementById("started").style.backgroundColor = "white"; document.getElementById("started").style.color = "black";
+        localStorage.setItem("lightmode", 0)
+    }
 
     for (var i = 0; i < lightmodes.length; i++) {
         lightmodes[i].addEventListener("click", function () {
             if (lightstate === 0) {
-                document.getElementById("mainpage").style.backgroundColor = "white";
-                document.getElementById("abouth5").style.color = "black";
-                document.getElementById("abouth2").style.color = "black";
-                document.getElementById("bannerimg").style.boxShadow = "0 0 30px black";
-
-                document.getElementById("started").style.backgroundColor = "grey"
-                document.getElementById("started").style.color = "white"
-
-                for (var i = 0; i < subjectTitles.length; i++) {
-                    subjectTitles[i].style.color = "#6b6b6b";
-                }
-
-                for (var a = 0; i < listItems.length; i++) {
-                    listItems[i].style.color = 'black';
-                }
-
                 lightstate = 1;
-
-            } else {
-                document.getElementById("mainpage").style.backgroundColor = "black";
-                document.getElementById("abouth5").style.color = "#545E75";
-                document.getElementById("abouth2").style.color = "#545E75";
-                document.getElementById("bannerimg").style.boxShadow = "0 0 30px white";
-
-                document.getElementById("started").style.backgroundColor = "white"
-                document.getElementById("started").style.color = "black";
-
-                for (var i = 0; i < subjectTitles.length; i++) {
-                    subjectTitles[i].style.color = "white";
-                }
-
-                for (var a = 0; i < listItems.length; i++) {
-                    listItems[i].style.color = 'white';
-                }
-
+                updateColoursLight()
+                console.log(localStorage.getItem("lightmode"))
+            } else if (lightstate === 1) {
                 lightstate = 0;
+                updateColoursDark() 
             }
         });
     }
