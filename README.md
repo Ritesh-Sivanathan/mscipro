@@ -22,10 +22,12 @@ Website construction started on August 28th, 2023. The website was created as a 
 
 ### Currently used dependencies and versions
 
-#### Last updated: **November 5th, 2023**
+#### Last updated: **January 16, 2024**
+
+# Just assume the latest version of each, but for most dependencies any version from a reasonable time ago works
 
 - Python = 3.11.6 
-- Flask = 2.3.3 ``` pip install Flask ```
+- Flask = 3.0.0 ``` pip install Flask ```
 - Flask-SQLAlchemy = 3.1.1 ``` pip install Flask-SQLAlchemy ```
 - SQLAlchemy = 2.0.21 ``` pip install SQLAlchemy ```
 - Frozen-Flask = 0.18 ``` pip install frozen-flask ```
