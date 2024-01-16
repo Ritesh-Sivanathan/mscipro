@@ -8,16 +8,6 @@ app = Flask(__name__)
 def index():
     return render_template('homepage.html')
 
-# -------- User Management --------
-
-@app.route('/login')
-def login():
-    return render_template('Login & Register/login.html')
-
-@app.route('/register')
-def register():
-    return render_template('Login & Register/register.html')
-
 # -------- Subjects Main --------
 
 @app.route('/mathematics')
