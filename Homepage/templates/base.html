@@ -171,29 +171,24 @@ nav {
 
     var lightstate = 0;
 
-    if (localStorage.getItem("lightmode") == 1) { updateColoursLight() }
-    if (localStorage.getItem("lightmode") == 0) { updateColoursDark() }
+    if (window.location.pathname == '/') {
+        if (localStorage.getItem("lightmode") == 1) { document.getElementById("mainpage").style.backgroundColor = "white"; document.getElementById("abouth5").style.color = "#6b6b6b"; document.getElementById("abouth2").style.color = "#6b6b6b"; document.getElementById("started").style.backgroundColor = "grey"; document.getElementById("started").style.color = "black" }
+        if (localStorage.getItem("lightmode") == 0) { document.getElementById("mainpage").style.backgroundColor = "black"; document.getElementById("abouth5").style.color = "#6b6b6b"; document.getElementById("abouth2").style.color = "#6b6b6b"; document.getElementById("started").style.backgroundColor = "white"; document.getElementById("started").style.color = "black"; }
 
-    function updateColoursLight() {
-        document.getElementById("mainpage").style.backgroundColor = "white"; document.getElementById("abouth5").style.color = "#6b6b6b"; document.getElementById("abouth2").style.color = "#6b6b6b"; document.getElementById("started").style.backgroundColor = "grey"; document.getElementById("started").style.color = "white"
-        localStorage.setItem("lightmode", 1)
-    }
-    function updateColoursDark() {
-        document.getElementById("mainpage").style.backgroundColor = "black"; document.getElementById("abouth5").style.color = "#6b6b6b"; document.getElementById("abouth2").style.color = "#6b6b6b"; document.getElementById("started").style.backgroundColor = "white"; document.getElementById("started").style.color = "black";
-        localStorage.setItem("lightmode", 0)
-    }
-
-    for (var i = 0; i < lightmodes.length; i++) {
-        lightmodes[i].addEventListener("click", function () {
-            if (lightstate === 0) {
-                lightstate = 1;
-                updateColoursLight()
-                console.log(localStorage.getItem("lightmode"))
-            } else if (lightstate === 1) {
-                lightstate = 0;
-                updateColoursDark() 
-            }
-        });
+            for (var i = 0; i < lightmodes.length; i++) {
+                lightmodes[i].addEventListener("click", function () {
+                    if (lightstate === 0) {
+                        lightstate = 1;
+                        document.getElementById("mainpage").style.backgroundColor = "white"; document.getElementById("abouth5").style.color = "#6b6b6b"; document.getElementById("abouth2").style.color = "#6b6b6b"; document.getElementById("started").style.backgroundColor = "grey"; document.getElementById("started").style.color = "black"
+                localStorage.setItem("lightmode", 1)
+                        console.log(localStorage.getItem("lightmode"))
+                } else if (lightstate === 1) {
+                    lightstate = 0;
+                    document.getElementById("mainpage").style.backgroundColor = "black"; document.getElementById("abouth5").style.color = "#6b6b6b"; document.getElementById("abouth2").style.color = "#6b6b6b"; document.getElementById("started").style.backgroundColor = "white"; document.getElementById("started").style.color = "black";
+                    localStorage.setItem("lightmode", 0)
+                }
+            });
+        }
     }
 
     for (i = 0; i < coll.length; i++) {
