@@ -1,6 +1,5 @@
 
 @import url('https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@300&family=Raleway:wght@300&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@300&family=Raleway:wght@300&family=Sometype+Mono:wght@500&display=swap');
 
 ::webkit-scroll{
     display:none;
@@ -54,4 +53,27 @@
     color: white;
 }
 
+#email:hover {
+    color:darkblue; 
+    text-decoration: none;
+}
 
+#instagram:hover {
+    color:darkmagenta;  
+    text-decoration:none;
+}
+
+#twitter:hover {
+    color:skyblue;  
+    text-decoration:none;
+}
+
+#youtube:hover {
+    color:red;  
+    text-decoration:none;
+}
+
+#discord:hover {
+    color:#5865F2;  
+    text-decoration:none;
+}

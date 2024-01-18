@@ -25,6 +25,10 @@ window.onload = function() {
     }
 
 }
+
+
+// --- Box focusing animation prototype ---
+
 //     gradeWork.addEventListener('mouseenter', function() {
 //         for (var i = 0; i < allBoxes.length; i++) {
 //             allBoxes[i].style.animation = "none";
