@@ -1,4 +1,5 @@
 window.onload = function() {
+    
     var modal = document.getElementById('myModal');
     var span = document.getElementsByClassName("close")[0];
     var sat = document.getElementById('open-modal');

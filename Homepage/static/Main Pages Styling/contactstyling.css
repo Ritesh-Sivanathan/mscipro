@@ -2,78 +2,78 @@
 @import url('https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@300&family=Raleway:wght@300&display=swap');
 
 ::webkit-scroll{
-    display:none;
+  display:none;
 }
 
 
 @media (max-width: 800px) {
-    .link-container .boxes {
-      flex-direction: column; 
-      align-items: center; 
-    }
-
-    .link-container a {
-      display: flex; 
-      align-items: center; 
-      padding-top: 15px; 
-      padding-bottom: 15px;
-    }
+  .link-container .boxes {
+    flex-direction: column; 
+    align-items: center; 
   }
 
+  .link-container a {
+    display: flex; 
+    align-items: center; 
+    padding-top: 15px; 
+    padding-bottom: 15px;
+   }
+}
+
 @media (min-width: 1000px) {
-    .link-container a{
-        padding-left:20px;
-    }
+  .link-container a {
+    padding-left:20px;
+  }
 }
 
 .full-body {
-    font-family: 'Raleway', sans-serif;
-    background-color: black;
-    margin: 0;
-    padding: 0;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+  font-family: 'Raleway', sans-serif;
+  background-color: black;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .link-container {
-    background-color: rgba(255,255,255,0.2);
-    padding: 30px;
-    border-radius: 10px;
-    border: 5px solid rgb(78, 77, 77);
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
-    color:white;
-    text-align: center;
-    margin-top:13%;
+  background-color: rgba(255,255,255,0.2);
+  padding: 30px;
+  border-radius: 10px;
+  border: 5px solid rgb(78, 77, 77);
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+  color:white;
+  text-align: center;
+  margin-top:13%;
 }
 
 .link-container a {
-    font-family: 'Josefin Sans', sans-serif;
-    font-size:250%;
-    color: white;
+  font-family: 'Josefin Sans', sans-serif;
+  font-size:250%;
+  color: white;
 }
 
 #email:hover {
-    color:darkblue; 
-    text-decoration: none;
+  color:darkblue; 
+  text-decoration: none;
 }
 
 #instagram:hover {
-    color:darkmagenta;  
-    text-decoration:none;
+  color:darkmagenta;  
+  text-decoration:none;
 }
 
 #twitter:hover {
-    color:skyblue;  
-    text-decoration:none;
+  color:skyblue;  
+  text-decoration:none;
 }
 
 #youtube:hover {
-    color:red;  
-    text-decoration:none;
+  color:red;  
+  text-decoration:none;
 }
 
 #discord:hover {
-    color:#5865F2;  
-    text-decoration:none;
+  color:#5865F2;  
+  text-decoration:none;
 }
