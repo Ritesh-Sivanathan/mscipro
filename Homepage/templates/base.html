@@ -25,7 +25,7 @@
 
                 <ul class="navbar-nav mr-auto">
                   <li class="nav-item active">
-                    <a class="nav-link" href="/" style="background-color: #343a40; color:rgba(192, 192, 192, 0.973);;">Home <span class="sr-only"></span></a>
+                    <a class="nav-link" id="home-link" href="/" style="background-color: #343a40; color:rgba(192, 192, 192, 0.973);;">Home <span class="sr-only"></span></a>
                   </li>
 
                   <li class="nav-item">
@@ -94,19 +94,19 @@
     var lightstate = 0;
 
     if (window.location.pathname == '/') {
-        if (localStorage.getItem("lightmode") == 1) { document.getElementById("mainpage").style.backgroundColor = "white"; document.getElementById("abouth5").style.color = "#6b6b6b"; document.getElementById("abouth2").style.color = "#6b6b6b"; document.getElementById("started").style.backgroundColor = "grey"; document.getElementById("started").style.color = "black" }
-        if (localStorage.getItem("lightmode") == 0) { document.getElementById("mainpage").style.backgroundColor = "black"; document.getElementById("abouth5").style.color = "#6b6b6b"; document.getElementById("abouth2").style.color = "#6b6b6b"; document.getElementById("started").style.backgroundColor = "white"; document.getElementById("started").style.color = "black"; }
+        if (localStorage.getItem("lightmode") == 1) { document.getElementById("mainpage").style.backgroundColor = "white"; document.getElementById("abouth5").style.color = "#6b6b6b"; document.getElementById("abouth2").style.color = "#6b6b6b"; document.getElementById("started").style.backgroundColor = "grey"; document.getElementById("started").style.color = "black";}
+        if (localStorage.getItem("lightmode") == 0) { document.getElementById("mainpage").style.backgroundColor = "black"; document.getElementById("abouth5").style.color = "#6b6b6b"; document.getElementById("abouth2").style.color = "#6b6b6b"; document.getElementById("started").style.backgroundColor = "white"; document.getElementById("started").style.color = "black";}
 
             for (var i = 0; i < lightmodes.length; i++) {
                 lightmodes[i].addEventListener("click", function () {
                     if (lightstate === 0) {
                         lightstate = 1;
-                        document.getElementById("mainpage").style.backgroundColor = "white"; document.getElementById("abouth5").style.color = "#6b6b6b"; document.getElementById("abouth2").style.color = "#6b6b6b"; document.getElementById("started").style.backgroundColor = "grey"; document.getElementById("started").style.color = "black"
+                        document.getElementById("mainpage").style.backgroundColor = "lightgrey"; document.getElementById("abouth5").style.color = "#6b6b6b"; document.getElementById("abouth2").style.color = "#6b6b6b"; document.getElementById("started").style.backgroundColor = "grey"; document.getElementById("started").style.color = "black"; document.getElementById("navBar").className = "navbar navbar-expand-md navbar-light bg-light"; document.getElementById("home-link").style.backgroundColor = "#F8F9FA";
                 localStorage.setItem("lightmode", 1)
                         console.log(localStorage.getItem("lightmode"))
                 } else if (lightstate === 1) {
                     lightstate = 0;
-                    document.getElementById("mainpage").style.backgroundColor = "black"; document.getElementById("abouth5").style.color = "#6b6b6b"; document.getElementById("abouth2").style.color = "#6b6b6b"; document.getElementById("started").style.backgroundColor = "white"; document.getElementById("started").style.color = "black";
+                    document.getElementById("mainpage").style.backgroundColor = "black"; document.getElementById("abouth5").style.color = "#6b6b6b"; document.getElementById("abouth2").style.color = "#6b6b6b"; document.getElementById("started").style.backgroundColor = "white"; document.getElementById("started").style.color = "black"; document.getElementById("navBar").className = "navbar navbar-expand-md navbar-dark bg-dark"; document.getElementById("home-link").style.backgroundColor = "#343a40";
                     localStorage.setItem("lightmode", 0)
                 }
             });

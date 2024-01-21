@@ -122,10 +122,13 @@ html, body {
 
 #hover-link:hover {
   text-decoration:none;
-  -webkit-text-fill-color: rgb(255, 255, 255);
-  transform:rotate(-90deg);
+  -webkit-text-fill-color: rgb(187, 187, 187);
 }
 
 #hover-link:not(:hover) {
-  color:rgb(0, 57, 131);
+  background: linear-gradient(45deg, #000000, #555555);
+  -webkit-background-clip: text;
+  color: transparent; 
+  font-size: 20px;
+  font-weight: bold; 
 }

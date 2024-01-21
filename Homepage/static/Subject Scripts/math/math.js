@@ -1,5 +1,34 @@
 window.onload = function() {
     
+    var flagElements = document.getElementsByClassName("flag");
+    
+    for (var i=0; i < flagElements.length; i++) {
+        if (localStorage.getItem(flagElements[i].id) == 'flagged') {
+            document.getElementById(flagElements[i].id).style.backgroundColor = "pink";
+        }
+    }
+    
+    for (var i=0; i < flagElements.length; i++) {
+        flagElements[i].addEventListener("click", flagPressed);
+    }
+    
+    function flagPressed(event) {
+        var clickedFlag = event.currentTarget; // fixes parent/child issue (.target checks the id of the li rather than the button id)
+        var flagId = clickedFlag.id;
+        if (localStorage.getItem(flagId) == null) {
+            localStorage.setItem(flagId, 'not-flagged')
+        } else {
+            if (localStorage.getItem(flagId) == 'not-flagged') {
+                localStorage.setItem(flagId, 'flagged')
+                document.getElementById(flagId).style.backgroundColor = "pink";
+            } else {
+                localStorage.setItem(flagId, 'not-flagged')
+                document.getElementById(flagId).style.backgroundColor = "grey";
+            }
+        }
+    }
+    
+
     var modal = document.getElementById('myModal');
     var span = document.getElementsByClassName("close")[0];
     var sat = document.getElementById('open-modal');
@@ -19,11 +48,6 @@ window.onload = function() {
     span.addEventListener("click", function() {
         modal.style.display = "none";
     });
-
-    if (localStorage.getItem('mathRUpdate') == null) {
-        alert("All resources on this page have been filled as of 1/17/2024. Thank you for your patience. I will be working on a feature to easily manage links so I can fill them out quicker in the future.")
-        localStorage.setItem('mathRUpdate', 0)
-    }
 
 }
 
