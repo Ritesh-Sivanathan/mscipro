@@ -1,0 +1,100 @@
+{% extends 'base.html' %}
+
+{% block usersettings %}
+
+<style>
+
+html, body {
+    background-color: darkgrey;
+}
+
+a:hover {
+    text-decoration: none;
+    color:grey;
+}
+
+a {
+    color:white;
+}
+
+.settings-sidebar {
+    width:13%;
+    height:500%;
+    margin-left:2%;
+    margin-top:8%;
+    background-color:black;
+    color:white;
+    text-align:center;
+    padding:1em;
+}
+
+.general-settings-content {
+    width:5em;
+    height:5em;
+}
+
+.settings-dropdown {
+    display:none;
+}
+
+#settings-dropdown-pressed:hover {
+    color:grey;
+}
+
+</style>
+
+<div class="settings-ui">
+    
+    <div class="settings-sidebar">
+        <div class="settings-sidebar-content"> <a id="settings-dropdown-pressed"> Settings </a>
+            <div class="settings-dropdown">
+                <div class="general-settings"> <a href="#"> General </a> </div>
+                <div class="privacy-settings"> <a href="#"> Privacy </a> </div>
+                <div class="safety-settings"> <a href="#"> Safety </a> </div>
+                <div class="display-design-settings"> <a href="#"> Display and Design </a> </div>
+                <div class="policy-settings"> <a href="#"> Privacy Policy </a> </div>
+                <div class="help-settings"> <a href="#"> Help </a> </div> 
+            </div>
+        </div> 
+    </div>
+
+    <div class="settings-display">
+        
+    </div>
+
+</div>
+
+<
+
+<div class="general-settings-content">
+
+</div>
+
+<script>
+
+    // dropdowns
+    settingsDropdown = document.getElementById('settings-dropdown-pressed')
+    
+
+    // content
+    sidebarContent = document.getElementsByClassName('settings-dropdown')    
+    
+    // states
+    settingsOpen = false
+
+    settingsDropdown.addEventListener('click', function() {
+        if (settingsOpen == false) {
+            for(i=0;i!=sidebarContent.length;i++) {
+                sidebarContent[i].style.display = "block";
+            settingsOpen = true
+        }}
+        else if (settingsOpen = true) {
+            for(i=0;i!=sidebarContent.length;i++) {
+                sidebarContent[i].style.display = "none";
+            settingsOpen=false
+        }}
+    })
+
+</script>
+
+{% endblock %}

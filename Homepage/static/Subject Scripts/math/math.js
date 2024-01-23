@@ -4,7 +4,7 @@ window.onload = function() {
     
     for (var i=0; i < flagElements.length; i++) {
         if (localStorage.getItem(flagElements[i].id) == 'flagged') {
-            document.getElementById(flagElements[i].id).style.backgroundColor = "pink";
+            document.getElementById(flagElements[i].id).style.backgroundColor = "white";
         }
     }
     
@@ -25,7 +25,7 @@ window.onload = function() {
         
         if (localStorage.getItem(flagId) == 'not-flagged') {
                 localStorage.setItem(flagId, 'flagged')
-                document.getElementById(flagId).style.backgroundColor = "pink";
+                document.getElementById(flagId).style.backgroundColor = "white";
             } else {
                 localStorage.setItem(flagId, 'not-flagged')
                 document.getElementById(flagId).style.backgroundColor = "grey";

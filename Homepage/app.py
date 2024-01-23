@@ -46,5 +46,9 @@ def adminPortal():
 def contact():
     return render_template('contact.html')
 
+@app.route('/settings')
+def userSettings():
+    return render_template('Client/settings.html')
+
 if __name__ == '__main__':
     app.run(debug=True)
