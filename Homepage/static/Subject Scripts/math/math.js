@@ -11,14 +11,19 @@ window.onload = function() {
     for (var i=0; i < flagElements.length; i++) {
         flagElements[i].addEventListener("click", flagPressed);
     }
+
+    function assignVals(flag) {
+        if (localStorage.getItem(flag) == null) {
+            localStorage.setItem(flag, 'not-flagged')
+        } 
+    }
     
     function flagPressed(event) {
         var clickedFlag = event.currentTarget; // fixes parent/child issue (.target checks the id of the li rather than the button id)
         var flagId = clickedFlag.id;
-        if (localStorage.getItem(flagId) == null) {
-            localStorage.setItem(flagId, 'not-flagged')
-        } else {
-            if (localStorage.getItem(flagId) == 'not-flagged') {
+        assignVals(flagId)
+        
+        if (localStorage.getItem(flagId) == 'not-flagged') {
                 localStorage.setItem(flagId, 'flagged')
                 document.getElementById(flagId).style.backgroundColor = "pink";
             } else {
@@ -26,7 +31,6 @@ window.onload = function() {
                 document.getElementById(flagId).style.backgroundColor = "grey";
             }
         }
-    }
     
 
     var modal = document.getElementById('myModal');
