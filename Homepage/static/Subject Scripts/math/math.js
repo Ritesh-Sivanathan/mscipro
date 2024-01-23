@@ -1,9 +1,11 @@
 window.onload = function() {
-    
+
+    flags = document.getElementsByClassName("flag");
+
     var flagElements = document.getElementsByClassName("flag");
     
     for (var i=0; i < flagElements.length; i++) {
-        if (localStorage.getItem(flagElements[i].id) == 'flagged') {
+        if (localStorage.getItem(flagElements[i].id) == 'flagged' && localStorage.getItem('showFlags') == 1) {
             document.getElementById(flagElements[i].id).style.backgroundColor = "white";
         }
     }
@@ -31,7 +33,6 @@ window.onload = function() {
                 document.getElementById(flagId).style.backgroundColor = "grey";
             }
         }
-    
 
     var modal = document.getElementById('myModal');
     var span = document.getElementsByClassName("close")[0];

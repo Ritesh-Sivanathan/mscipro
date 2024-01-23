@@ -58,7 +58,8 @@ a {
 }
 
 #enable-disable-flagging {
-    background-color:green;
+    margin-left:30%;
+    margin-top:2%;
 }
 
 </style>
@@ -125,6 +126,29 @@ a {
 
     // states
     settingsOpen = false
+
+    // localstorage set
+
+    if (localStorage.getItem('showFlags') == null) {
+        localStorage.setItem('showFlags', 1);
+    } else if (localStorage.getItem('showFlags') == 0) {
+        enableDisableFlagging.style.backgroundColor = "red";
+    } else {
+        enableDisableFlagging.style.backgroundColor = "green";
+    }
+    
+    enableDisableFlagging.addEventListener("click", function() {
+        if (localStorage.getItem('showFlags') == 0) {
+            console.log('true')
+            enableDisableFlagging.style.backgroundColor = "green";
+            localStorage.setItem('showFlags', 1)
+        } else if (localStorage.getItem('showFlags') == 1) {
+            console.log('false')
+            enableDisableFlagging.style.backgroundColor = "red";
+            localStorage.setItem('showFlags', 0)
+        }
+    })
+
 
     settingsDropdown.addEventListener('click', function() {
         if (settingsOpen == false) {
