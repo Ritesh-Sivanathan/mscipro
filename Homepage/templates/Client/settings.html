@@ -57,7 +57,7 @@ a {
     background-color:black;
 }
 
-.flagging-display button{
+#enable-disable-flagging {
     background-color:green;
 }
 
@@ -91,7 +91,7 @@ a {
             <div class="settings-display-tab" id="display-settings">
                 <div class="features-settings">
                     <div class="flagging-system">
-                        <button class="flagging-display" id="enable-disable-flagging" onclick="change()"> Content Flagging </button>
+                        <button class="flagging-display" id="enable-disable-flagging"> Content Flagging </button>
                         <label for="flag-colour"> Flag Colour </label>
                         <input type="text">
                     </div>
@@ -125,10 +125,6 @@ a {
 
     // states
     settingsOpen = false
-
-    function change() {
-        enableDisableFlagging.style.backgroundColor = "white;"
-    }
 
     settingsDropdown.addEventListener('click', function() {
         if (settingsOpen == false) {
