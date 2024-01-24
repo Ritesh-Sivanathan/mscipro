@@ -1,11 +1,25 @@
 window.onload = function() {
-
+    
     flags = document.getElementsByClassName("flag");
 
     var flagElements = document.getElementsByClassName("flag");
+
+    function showFlags() {
+      if (localStorage.getItem('showFlags') == 1) {
+        for (i=0;i<=flagElements.length;i++) {
+          document.getElementById(flagElements[i].id).style.display = "inline";
+            }
+    } else if (localStorage.getItem('showFlags') == 0) {
+        for (i=0;i<=flagElements.length;i++) {
+          document.getElementById(flagElements[i].id).style.display = "none";
+            }
+        }
+    }
+
+    showFlags()
     
     for (var i=0; i < flagElements.length; i++) {
-        if (localStorage.getItem(flagElements[i].id) == 'flagged' && localStorage.getItem('showFlags') == 1) {
+        if (localStorage.getItem(flagElements[i].id) == 'flagged') {
             document.getElementById(flagElements[i].id).style.backgroundColor = "white";
         }
     }
@@ -55,26 +69,3 @@ window.onload = function() {
     });
 
 }
-
-
-// --- Box focusing animation prototype ---
-
-//     gradeWork.addEventListener('mouseenter', function() {
-//         for (var i = 0; i < allBoxes.length; i++) {
-//             allBoxes[i].style.animation = "none";
-//             void allBoxes[i].offsetWidth; 
-//             allBoxes[i].style.animation = "boxHoverFade 0.5s linear";
-//             allBoxes[i].style.opacity = 0;
-//         }
-//     });
-    
-//     gradeWork.addEventListener('mouseleave', function() {
-//         for (var i = 0; i < allBoxes.length; i++) {
-//             allBoxes[i].style.animation = "none"; 
-//             void allBoxes[i].offsetWidth; 
-//             allBoxes[i].style.animation = "boxHoverFadeRelease 0.5s linear";
-//             gradeWork.style.animation = "none";
-//             allBoxes[i].style.opacity = 1;
-//         }
-//     });
-// }    

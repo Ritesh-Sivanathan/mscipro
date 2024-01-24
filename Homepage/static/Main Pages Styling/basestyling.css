@@ -30,13 +30,12 @@ nav {
 .navbar {
   border-bottom: 10px solid rgb(93, 93, 93);
   background-color: black;
-  box-shadow: 0 0 10px rgb(255, 255, 255); 
+  box-shadow: 0 0 10px #253372; 
 }
 
 .navbar-brand {
   text-align:center;
   border-bottom: 2px solid rgb(93, 93, 93);
-  box-shadow:0, 0, 20px pink;
 }
 
 .navbar-toggler {

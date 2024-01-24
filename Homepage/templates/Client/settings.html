@@ -5,7 +5,7 @@
 <style>
 
 html, body {
-    background-color: darkgrey;
+    background-color: black;
 }
 
 a:hover {
@@ -20,11 +20,12 @@ a {
 .settings-sidebar {
     width:10em;
     height:500%;
-    margin-left:2%;
     margin-top:8%;
     background-color:black;
     color:white;
     text-align:center;
+    float:center;
+    margin-left:45em;
     padding:1em;
 }
 
@@ -44,7 +45,7 @@ a {
 .settings-display {
     width:75%;
     height:90%;
-    background-color:white;
+    background-color:grey;
     float:right;
     margin-right:5%;
     margin-top:-5%;
@@ -62,47 +63,36 @@ a {
     margin-top:2%;
 }
 
+.flagging-system {
+    display:none;
+}
+
 </style>
 
 <div class="settings-ui">
     
     <div class="settings-sidebar">
-        <div class="settings-sidebar-content"> <a id="settings-dropdown-pressed"> <h5> Settings </h5> </a>
+        <div class="settings-sidebar-content"> <a id="settings-dropdown-pressed"> <h5 style="font-size:30px;"> Settings </h5> </a>
             <div class="settings-dropdown">
-                <div class="general-settings"> <a href="#"> <center> General </center> </a> </div>
+                <div class="general-settings"> <a href="#"> <center> General </center> </a> 
+                    <div class="general-display">
+                        
+                    </div>
+                </div>
                 <div class="privacy-settings"> <a href="#"> <center> Privacy </center> </a> </div>
                 <div class="safety-settings"> <a href="#"> <center> Safety </center> </a> </div>
-                <div class="display-design-settings"> <a href="#"> <center> Display and Design </center> </a> </div>
-                <div class="policy-settings"> <a href="#"> <center> Privacy Policy </center> </a> </div>
-                <div class="help-settings"> <a href="#"> <center> Help </center> </a> </div> 
-            </div>
-        </div> 
-    </div>
-
-    <div class="settings-display">
-        <div class="settings-display-tab" id="general"> <center> <b> General </b> </center> 
-            <div class="settings-options"> </div>
-        </div>
-        <hr>
-        <div class="settings-display-tab" id="general"> <center> Privacy </center> </div>
-        <hr>
-        <div class="settings-display-tab" id="safety"> <center> Safety </center> </div>
-        <hr>
-        <div class="settings-display-tab" id="display-design"> <center> Display and Design </center> 
-            <div class="settings-display-tab" id="display-settings">
-                <div class="features-settings">
+                <div class="display-design-settings"> <a href="#" id="clickmepls"> <center> Display and Design </center> </a> 
                     <div class="flagging-system">
                         <button class="flagging-display" id="enable-disable-flagging"> Content Flagging </button>
                         <label for="flag-colour"> Flag Colour </label>
                         <input type="text">
                     </div>
-                </div> 
+                </div>
+                <div class="policy-settings"> <a href="#"> <center> Privacy Policy </center> </a> </div>
+                <div class="help-settings"> <a href="#"> <center> Help </center> </a> </div> 
             </div>
-        </div>
-        <hr>
-        <div class="settings-display-tab" id="general"> <center> Privacy Policy </center> </div>
-        <hr>
-        <div class="settings-display-tab" id="general"> <center> Help </center> </div>
+        </div> 
+    </div>
 
     </div>
 
@@ -113,6 +103,14 @@ a {
 </div>
 
 <script>
+    a = document.getElementsByClassName('flagging-system');
+
+    document.getElementById('clickmepls').addEventListener('click', function () {
+        for (i=0;i!=document.getElementsByClassName('flagging-system').length;i++) {
+            document.getElementById(a[i].id).style.display = "block";
+        }
+        document.getElementsByClassName('flagging-system').style.display = "block";
+    })
 
     // dropdowns
     settingsDropdown = document.getElementById('settings-dropdown-pressed')
