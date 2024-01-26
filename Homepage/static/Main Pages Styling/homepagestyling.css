@@ -36,8 +36,17 @@ li {
 @media screen and (max-width: 1000px) {
     
     #button_totop{ 
-      display:block;
+      display:none;
     }
+
+    .content-not {
+      margin-top:5%;
+      width:25em auto;
+      background-color:rgb(63, 63, 63);
+      border:2px solid grey;
+      height:auto;
+    }
+
 
     #abouth2{
       margin-top:11%;
@@ -88,7 +97,32 @@ li {
       user-select: none;
       border-bottom: 20px solid rgba(128, 128, 128, 0.112);            
     }
+
+    .content-not {
+      margin-top:5%;
+      width:25em auto;
+      background-color:rgb(63, 63, 63);
+      border:2px solid grey;
+      height:auto;
 }
+
+@media screen and (min-width: 1001px) {
+  .content-not {
+    margin-top:5%;
+    width:25em;
+    background-color:rgb(63, 63, 63);
+    border:2px solid grey;
+    height:auto;
+  }}
+  
+@media screen and (max-width: 1000px) {
+  
+  #button_totop{ 
+  display:none;
+  }
+  
+
+}}
 
 
 .subject_container {
@@ -193,3 +227,49 @@ li {
   text-decoration: none;
   cursor: pointer;
 }
+
+#math-dropdown-content {
+  display:none;
+}
+
+#science-dropdown-content {
+  display:none;
+}
+
+#programming-dropdown-content {
+  display:none;
+}
+
+#math-dropdown {
+  cursor:pointer;
+  margin-top:-2em;
+}
+
+#science-dropdown {
+  cursor:pointer;
+}
+
+#programming-dropdown {
+  cursor:pointer;
+  margin-bottom:2em;
+}
+
+#math-dropdown:hover {
+  color:blue;
+  cursor:pointer;
+}
+
+#math-dropdown:hover #math-sign {
+  color:green;
+}
+
+#science-dropdown:hover {
+  color:green;
+  cursor:pointer;
+}
+
+#programming-dropdown:hover {
+  color:red;
+}
+
+
