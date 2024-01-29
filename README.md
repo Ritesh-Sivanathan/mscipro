@@ -23,7 +23,7 @@ This website was created to help me learn about web development in a practical w
 
 #### Last updated: **January 16, 2024**
 
-# Just assume the latest version of each, but for most dependencies any version from a reasonable time ago works
+### Just assume the latest version of each, but for most dependencies any version from a reasonable time ago works
 
 - Python = 3.12.1 
 - Flask = 3.0.1 ``` pip install Flask ```
@@ -40,3 +40,10 @@ This website was created to help me learn about web development in a practical w
 ### Frameworks
 
 - Flask
+
+# 4 - Future Languages, Tools and Frameworks
+
+- ReactJS
+- Tailwind CSS
+- PHP backend
+- SQL
