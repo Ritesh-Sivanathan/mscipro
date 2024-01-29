@@ -82,7 +82,7 @@ a {
                 <div class="privacy-settings"> <a href="#"> <center> Privacy </center> </a> </div>
                 <div class="safety-settings"> <a href="#"> <center> Safety </center> </a> </div>
                 <div class="display-design-settings"> <a href="#" id="clickmepls"> <center> Display and Design </center> </a> 
-                    <div class="flagging-system">
+                    <div class="flagging-system" id="flagg">
                         <button class="flagging-display" id="enable-disable-flagging"> Content Flagging </button>
                         <label for="flag-colour"> Flag Colour </label>
                         <input type="text">
@@ -103,13 +103,12 @@ a {
 </div>
 
 <script>
+
     a = document.getElementsByClassName('flagging-system');
+    settings = document.getElementById('flagg')
 
     document.getElementById('clickmepls').addEventListener('click', function () {
-        for (i=0;i!=document.getElementsByClassName('flagging-system').length;i++) {
-            document.getElementById(a[i].id).style.display = "block";
-        }
-        document.getElementsByClassName('flagging-system').style.display = "block";
+        settings.style.display = "block";
     })
 
     // dropdowns

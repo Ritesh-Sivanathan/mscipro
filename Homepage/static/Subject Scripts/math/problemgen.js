@@ -1,6 +1,6 @@
-// script for arithmetic/problem generator on MSCIPro's Mathematics page
+// script for arithmetic/problem gen
 
-document.addEventListener("DOMContentLoaded", function () { // check if page is loaded before running script to allow for faster page load times
+document.addEventListener("DOMContentLoaded", function () {
 
     // get all buttons and fields that need to be dynamically changed
     // include difficulty display, score display, generate problem btn, problem space, answer query, check answer button, difficult selection button
@@ -13,31 +13,58 @@ document.addEventListener("DOMContentLoaded", function () { // check if page is 
     const digitSelect = document.getElementById("digit-select");
     const scoreElement = document.getElementById("score");
     const skippedText = document.getElementById("skipped");
-
+    const highScore = document.getElementById('high-score');
 
     // score is set to 0 as default. will be replaced with stored info later
 
-    let score = 0;
+    var score = 0;
+    var hscore = 0;
 
+    function oldHighScore() {
+        highScore.textContent = ` High Score: ${getHighScore()}`;
+    }
 
+    oldHighScore() // initial score setting to update html
+
+    function newHighScore() { // used when user gets answr correct
+        if (score > localStorage.getItem('hscore')) {
+            localStorage.setItem('hscore', score);
+        }
+    }
+
+    console.log(localStorage.getItem('hscore'))
+
+    function getHighScore() {
+        if (localStorage.getItem('hscore') == null) {
+            localStorage.setItem('hscore', 0);
+        } 
+
+        return localStorage.getItem('hscore')
+    }
+
+    getHighScore()
+    
     // find the difficulty selected by user
 
     function getSelectedOption() {
         const selectedValue = digitSelect.value;
-        let maxRange;
+        var maxRange;
         
-        if (selectedValue === "single-digit") {
-            maxRange = 10;
-            updateDifficulty("Single Digit");
-        } else if (selectedValue === "double-digit") {
-            maxRange = 99;
-            updateDifficulty("Double Digit");
-        } else if (selectedValue === "triple-digit") {
-            maxRange = 999;
-            updateDifficulty("Triple Digit");
-        } else if (selectedValue === "quadruple-digit") {
-            maxRange = 9999;
-            updateDifficulty("Quadruple Digit");
+        switch (selectedValue) {
+            case "single-digit":
+                maxRange = 10;
+                updateDifficulty("Single Digit");
+                break
+            case "double-digit":
+                maxRange = 99;
+                updateDifficulty("Double Digit");
+                break
+            case "triple-digit":
+                maxRange = 999;
+                updateDifficulty("Triple Digit")
+            case "quadruple-digit":
+                maxRange = 9999;
+                updateDifficulty("Quadruple Digit");
         }
 
         // using max range corresponding to the selected difficulty level with the generate problem function
@@ -76,13 +103,15 @@ document.addEventListener("DOMContentLoaded", function () { // check if page is 
             resultText.textContent = "Correct!";
             score++;
 
-            // Generate a new problem after a correct answer
+            // correct answer -> prob gen
             getSelectedOption();
         } else {
             resultText.textContent = "Incorrect. Try again.";
         }
 
-        // Update the score
+        // update  score
         scoreElement.textContent = `Score: ${score}`;
+        newHighScore()
+        oldHighScore()
     });
 });

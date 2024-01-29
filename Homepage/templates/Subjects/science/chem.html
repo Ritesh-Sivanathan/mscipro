@@ -1,0 +1,88 @@
+{% extends 'base.html' %}
+
+{% block chem %}
+
+<head> 
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/PapaParse/5.3.0/papaparse.min.js"></script>
+
+    <style>
+
+    @import url('https://fonts.googleapis.com/css2?family=PT+Sans&display=swap');
+
+
+        h1, form, #elementInfo {
+            color:white;
+        }
+
+        h1 {
+            margin-top:2em;
+        }
+
+        #elementInfo {
+            margin-top:3em;
+        }
+
+        body {
+            background-color: black;
+        }
+
+        
+        #card {
+                width:20em;
+                height:20em;
+                background-color: grey;
+                font-family: 'PT Sans', sans-serif;
+                font-size:20px;
+            }
+        
+    </style>
+
+</head>
+<body>
+    <center>
+    <body>
+        <h1>Element Information</h1>
+        <form id="elementForm">
+            <label for="elementName">Enter Element Name:</label>
+            <input type="text" id="elementName" name="elementName">
+            <button type="submit">Get Information</button>
+        </form>
+
+        <div id="card">
+            <div id="elementInfo" style="color:black;"></div>
+        </div>
+    
+        <script>
+
+            document.getElementById('elementForm').addEventListener('submit', function(event) {
+                event.preventDefault();
+                var form = event.target;
+                var formData = new FormData(form);
+    
+                fetch('/get_element_info', {
+                    method: 'POST',
+                    body: formData
+                })
+                .then(response => response.json())
+                .then(data => {
+                    var elementInfoDiv = document.getElementById('elementInfo');
+                    elementInfoDiv.innerHTML = '';
+                    for (const [key, value] of Object.entries(data)) {
+                        var paragraph = document.createElement('p');
+                        paragraph.textContent = `${key}: ${value}`;
+                        elementInfoDiv.appendChild(paragraph);
+                    }
+                })
+                .catch(error => console.error('Error:', error));
+            });
+
+        </script>
+
+</body>
+</center>
+
+<style>
+</style>
+
+{% endblock %}
