@@ -1,11 +1,11 @@
-# MSCIPro
+<h1 align="center"> MSCIPro </h1>
 
 # My favourite scripts on the site (for those interested)
 
-- All of the JS files (in the 'static' directory)
+- All of the JS scripts (in the 'static' directory)
 - base.html
 
-The JS files is where I learnt the most. Prior to starting the website, I knew nothing, 0% of JS. Since I started this project, I've learnt so much about JavaScript, and have grown to like it. I cannot say the same about CSS...
+> The JS scripts are where I learnt the most. Prior to starting the website, I knew nothing, 0% of JS. Since I started this project, I've learnt so much about JavaScript, and have grown to like it. I cannot say the same about CSS...
 
 ## Contents
 ### 1 ... Introduction & Information
