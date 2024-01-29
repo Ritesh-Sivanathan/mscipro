@@ -28,7 +28,7 @@ This website was created to help me learn about web development in a practical w
 
 ### Currently used dependencies and versions
 
-#### Last updated: **January 16, 2024**
+#### Last updated: **January 28, 2024**
 
 ### Just assume the latest version of each, but for most dependencies any version from a reasonable time ago works
 
