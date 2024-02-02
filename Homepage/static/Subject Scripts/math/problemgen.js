@@ -32,8 +32,6 @@ document.addEventListener("DOMContentLoaded", function () {
         }
     }
 
-    console.log(localStorage.getItem('hscore'))
-
     function getHighScore() {
         if (localStorage.getItem('hscore') == null) {
             localStorage.setItem('hscore', 0);

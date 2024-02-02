@@ -9,8 +9,9 @@ body {
 }
 
 nav {
-  font-family: 'Raleway', sans-serif;
+  font-family: 'Archivo', sans-serif; 
   font-size:130%;
+  height:8rem;
 }
 
 #contactUs-navlink {
@@ -48,10 +49,6 @@ nav {
   text-align: left;
   outline: none;
   font-size: 15px;
-}
-
-.navbar-toggler-icon {
-  margin-left:1%;
 }
 
 .navbar-nav .nav-link {
