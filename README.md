@@ -1,7 +1,10 @@
 <h1 align="center"> MSCIPro </h1>
 
+❗ Database coming soon to host scraped resources | will be hosted on my own machine
+
 # My favourite scripts on the site (for those interested)
 
+- rsrc_scraper.py | though a very simple script, I really enjoyed writing it as i haven't used bs4 in a while
 - All of the JS scripts (in the 'static' directory)
 - base.html
 
