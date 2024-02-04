@@ -14,7 +14,6 @@
 ### 1 ... Introduction & Information
 ### 2 ... Dependencies
 ### 3 ... Current Languages, Tools and Frameworks
-### 4 ... Future Languages, Tools and Frameworks
 
 # 1 - **Introduction & Information**
 
@@ -47,14 +46,10 @@ This website was created to help me learn about web development in a practical w
 - CSS
 - Python
 - Javascript
+- MySQL
 
 ### Frameworks
 
 - Flask
 
-# 4 - Future Languages, Tools and Frameworks
-
-- ReactJS
-- Tailwind CSS
-- PHP backend
-- SQL
+Thank you for taking the time to read this. Contact me here: ritesh.sivanathan@gmail.com with any questions/concerns
