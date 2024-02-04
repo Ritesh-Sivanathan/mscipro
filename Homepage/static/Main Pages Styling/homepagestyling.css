@@ -9,6 +9,10 @@ body {
   font-family: 'Archivo', sans-serif;
 }
 
+#foot {
+  margin-top:-2%;
+}
+
 p {
   font-family: 'Kanit', sans-serif;
 }

@@ -5,6 +5,16 @@
   display:none;
 }
 
+:root {
+  --twitter-color: skyblue;
+  --email-color: darkblue;
+  --instagram-color: darkmagenta;
+  --youtube-color: red;
+}
+
+#foot {
+  display:none;
+}
 
 @media (max-width: 800px) {
   .link-container .boxes {
@@ -54,26 +64,21 @@
 }
 
 #email:hover {
-  color:darkblue; 
+  color:var(--email-color); 
   text-decoration: none;
 }
 
 #instagram:hover {
-  color:darkmagenta;  
+  color:var(--instagram-color);  
   text-decoration:none;
 }
 
 #twitter:hover {
-  color:skyblue;  
+  color:var(--twitter-color);  
   text-decoration:none;
 }
 
 #youtube:hover {
-  color:red;  
-  text-decoration:none;
-}
-
-#discord:hover {
-  color:#5865F2;  
+  color:var(--youtube-color);  
   text-decoration:none;
 }
