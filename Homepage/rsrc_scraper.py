@@ -10,6 +10,14 @@
 
 # is still functional tho
 
+
+# instead of storing on a database ( due to storage concerns with mongodb my preferred backend ), i'll use a plain text 
+#                                                                                                 json file and some dynamic 
+#                                                                                                 html using a basic js script 
+#                                                                                                 to display a random video from 
+#                                                                                                 the given list
+
+
 from bs4 import BeautifulSoup
 import requests
 import os
