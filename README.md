@@ -37,6 +37,7 @@ This website was created to help me learn about web development in a practical w
 
 - Python = 3.12.1 
 - Flask = 3.0.1 ``` pip install Flask ```
+- PyMongo = 4.6.1 ``` pip install pymongo ```
 
 # 3 - Current Languages, Tools and Frameworks
 
