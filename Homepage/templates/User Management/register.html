@@ -1,0 +1,79 @@
+{% extends 'base.html' %}
+
+{% block title %} Register - MSCIPro {% endblock %}
+
+
+{% block register %}
+
+
+<center>
+<div class="register-container">
+    <div class="fields">
+
+        <h2> Register - MSCIPro </h2>
+
+        <form action="/submit-form" method="POST">
+
+            <input type="text" id="f_name" name="f_name" placeholder="First Name:"> <br>
+            <input type="text" id="l_name" name="l_name" placeholder="Last Name:"> <br>
+            <input type="text" id="username" name="username" placeholder="Username:"> <br>
+            <input type="password" id="password" name="password" placeholder="Password:"> <br>
+            <input type="email" id="email" name="email" placeholder="Email:" > <br>
+
+            <a href="/forgot-password" id="forgot-password"> Forgot Password? </a> <br>
+
+            <button type="submit" id="submit-button">Submit</button> 
+
+        </form>
+    </div>
+</div>
+</center>
+
+<style>
+
+body, html {
+        background-color: black;
+    }
+
+    #f_name {
+        margin-top: 10%;
+    }
+
+    #forgot-password {
+        margin-top: 5%;
+    }
+
+    .register-container {
+        margin-top: 20vh;
+        width: 30%;
+        min-width: 200px;
+        max-width: 400px;
+        background-color: grey;
+        padding: 20px;
+        box-sizing: border-box; /* Include padding and border in the element's total width and height */
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    input[type="text"],
+    input[type="password"],
+    input[type="email"] {
+        width: 100%; /* Make the input fields fill the container width */
+        margin-bottom: 10px; /* Add spacing between input fields */
+        box-sizing: border-box; /* Include padding and border in the input field's total width */
+    }
+
+    #submit-button {
+        width: 100%; /* Make the submit button fill the container width */
+        margin-top: 10px; /* Adjust margin as needed */
+        box-sizing: border-box; /* Include padding and border in the button's total width */
+    }
+
+    #foot {
+        background-color: black;
+        margin-top: 15%;
+        display: block;
+    }
+</style>
+
+{% endblock %}

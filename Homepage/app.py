@@ -1,21 +1,123 @@
 from flask import Flask, render_template, request, redirect, url_for, session, jsonify
 import csv
+import mysql.connector
+from email.mime.text import MIMEText
+from email.mime.multipart import MIMEMultipart
+import smtplib
 
 app = Flask(__name__)
+app.secret_key = 'no chance'
 
-def get_element_info(element_name):
-    with open('elements.csv', 'r', newline='', encoding='utf-8') as file:
-        reader = csv.DictReader(file)
-        for row in reader:
-            if row['Element'].lower() == element_name.lower():
-                return row['Symbol'], row['Element'], row['AtomicMass'], row['AtomicNumber'], row['NumberofElectrons'], row['NumberofProtons'], row['NumberofNeutrons'], row['Type']
+def connect_to_db():
+    try:
+        conn = mysql.connector.connect(
+            # not getting this info brobro
+        )
+        return conn
+    except mysql.connector.Error as e:
+        print("Error connecting to database:", e)
         return None
 
 # -------- Homepage --------
 
 @app.route('/')
 def index():
+    if 'logged_in' not in session:
+        session['logged_in'] = False
     return render_template('homepage.html')
+
+# -------- Login & Register --------
+
+# -------- Login --------
+
+@app.route('/login')
+def login():
+    return render_template('User Management/login.html')
+
+def login_user(username, email, password):
+    conn = connect_to_db()
+    if conn:
+        cursor = conn.cursor(dictionary=True)
+        cursor.execute("SELECT * FROM users WHERE (username = %s OR email = %s) AND password = %s", # avoids sql injection
+                       (username, email, password))
+        user = cursor.fetchone()
+        cursor.close()
+        conn.close()
+
+        if user:
+            session['logged_in'] = True
+            session['username'] = username
+
+        return user
+    else:
+        return None
+
+@app.route('/login-form', methods=['POST'])
+def login_form():
+    username = request.form['username']
+    email = request.form['email']
+    password = request.form['password']
+    
+    user = login_user(username, email, password)
+    
+    if user:
+        return render_template('User Management/loginsucess.html')
+    else:
+        return "Invalid username/email or password"
+
+# -------- Register --------
+
+@app.route('/register')
+def register():
+    return render_template('User Management/register.html')
+
+def register_user(f_name, l_name, username, password, email):
+    conn = connect_to_db()
+    if conn:
+        cursor = conn.cursor(dictionary=True)
+
+        cursor.execute("SELECT * FROM users WHERE username = %s OR email = %s", (username, email)) # avoids sql injection
+
+        existing_user = cursor.fetchone()
+
+        if existing_user:
+            cursor.close()
+            conn.close()
+            return "Username/Email Exists. Choose a different Username/Email"
+        else:
+            cursor.execute("INSERT INTO users (f_name, l_name, username, password, email) VALUES (%s, %s, %s, %s, %s)",
+                        (f_name, l_name, username, password, email))
+            conn.commit()  # Commit the transaction
+            cursor.close()
+            conn.close()
+
+            session['logged_in'] = True
+            session['username'] = username
+
+            return render_template('User Management/registersuccess.html')
+
+    
+    else:
+        return "Failed to add user: Database connection error"
+
+@app.route('/submit-form', methods=['POST'])
+def submit_form():
+    f_name = request.form['f_name']
+    l_name = request.form['l_name']
+    username = request.form['username']
+    password = request.form['password']
+    email = request.form['email']
+
+    register_user(f_name, l_name, username, password, email)
+
+    return "Submitted Successfully"
+
+# -------- Log out --------
+
+@app.route('/logout')
+def logout():
+    session['logged_in'] = False
+    return redirect('https://mscipro.pythonanywhere.com/')
 
 # -------- Subjects Main --------
 
@@ -25,7 +127,10 @@ def math():
 
 @app.route('/science')
 def science():
-    return render_template('Subjects/science/science.html')
+    if session['logged_in'] == True:
+        return render_template('Subjects/science/science.html')
+    else:
+        return render_template('User Management/register.html')
 
 @app.route('/programming')
 def programming():
@@ -58,26 +163,6 @@ def contact():
 @app.route('/settings')
 def userSettings():
     return render_template('Client/settings.html')
-
-@app.route('/chem') 
-def chemistry():
-    return render_template('Subjects/science/chem.html')
-
-@app.route('/get_element_info', methods=['POST'])
-def getElementInfo():
-    element_name = request.form['elementName']
-    element_info = get_element_info(element_name)
-    valuesDicts = {
-        'Symbol': element_info[0],
-        'Name': element_info[1],
-        'Atomic Mass': element_info[2],
-        'Atomic Number': element_info[3],
-        '# of Electrons': element_info[4],
-        '# of Protons': element_info[5],
-        '# of Neutrons': element_info[6],
-        'Type': element_info[7]
-    }
-    return jsonify(valuesDicts)
 
 if __name__ == '__main__':
     app.run(debug=True)
