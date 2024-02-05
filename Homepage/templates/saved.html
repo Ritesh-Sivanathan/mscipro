@@ -1,0 +1,29 @@
+{% extends 'base.html' %}
+
+{% block userresources %}
+
+<center>
+    <div class="container">
+        <h1> <b> <u>Store your own resources </u> </b></h1>
+        <form action="/send-resources" method="post">
+            <input type="text" name="resource_name" id="resource_name" placeholder="Resource Name:">
+            <input type="text" name="resource_url" id="resource_url" placeholder="Resource URL":> 
+            <button type="submit"> Submit </button>
+        </form>
+    </div>
+</center>
+
+<style>
+
+body, html {
+    background-color:black;
+}
+
+.container {
+    margin-top:10%;
+    padding-bottom:10%;
+}
+
+</style>
+
+{% endblock %}

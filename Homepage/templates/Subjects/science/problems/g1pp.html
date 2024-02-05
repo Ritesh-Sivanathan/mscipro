@@ -41,48 +41,47 @@
 <script>
 
 function jsonREAD() {
+  
   fetch('./json/resource.json')
 
-  .then((res)=>{
-
-        if  (!res.ok) {
-          throw new Error
-        }
-          return res.json();
-        })
+  .then((res) => {
+    if (!res.ok) {
+      throw new Error
+    }
+      return res.json();
+    })
     
-  .then((data) => 
-
-  {
+  .then((data) => {
 
     for (dp=0;dp!=data['resources'].length;dp++) {
-    const heading = (data['resources'][dp]['heading'])
-    const link = (data['resources'][dp]['link'])
-    const courtesiesLink = (data['resources'][dp]['courtesies'][0])
-    const courtesiesName = (data['resources'][dp]['courtesies'][1])
+      const heading = (data['resources'][dp]['heading'])
+      const link = (data['resources'][dp]['link'])
+      const courtesiesLink = (data['resources'][dp]['courtesies'][0])
+      const courtesiesName = (data['resources'][dp]['courtesies'][1])
 
 
-    const resourceElement = document.createElement('div');
-    resourceElement.classList.add('content-block');
-    resourceElement.innerHTML = `
-    <h2 style="margin-top:5%"><b><u>${heading}</u></b></h2>
+      const resourceElement = document.createElement('div');
+      resourceElement.classList.add('content-block');
+      resourceElement.innerHTML = `
+      <h2 style="margin-top:5%"><b><u>${heading}</u></b></h2>
         <iframe src="${link}#toolbar=0&navpanes=0&scrollbar=0" width="600" height="400" type='application/pdf'> </iframe>
         <div class="courtesy-mark"> Courtesy of: <a href="${courtesiesLink}" target="_blank"> ${courtesiesName} </a> <br> <a href="${link}" download="thisisafile"> Download </a> </div>
-    </div>
-    `;
+      </div>
+    ` ;
 
-    document.body.appendChild(resourceElement)
+    document.body.appendChild(resourceElement) 
+   
+   }
 
-  }
-    })
+  })
 
-  .catch((error) =>
-  console.error(error))
+  .catch((error) => console.error(error))
+
 }
 
     jsonREAD()
 
-    document.getElementById('foot').style.display = 'block';   
+    // document.getElementById('foot').style.display = 'block';   
 
 </script>
 

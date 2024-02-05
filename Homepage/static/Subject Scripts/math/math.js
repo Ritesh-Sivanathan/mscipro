@@ -54,26 +54,3 @@ window.onload = function() {
     });
 
 }
-
-
-// --- Box focusing animation prototype ---
-
-//     gradeWork.addEventListener('mouseenter', function() {
-//         for (var i = 0; i < allBoxes.length; i++) {
-//             allBoxes[i].style.animation = "none";
-//             void allBoxes[i].offsetWidth;
-//             allBoxes[i].style.animation = "boxHoverFade 0.5s linear";
-//             allBoxes[i].style.opacity = 0;
-//         }
-//     });
-
-//     gradeWork.addEventListener('mouseleave', function() {
-//         for (var i = 0; i < allBoxes.length; i++) {
-//             allBoxes[i].style.animation = "none";
-//             void allBoxes[i].offsetWidth;
-//             allBoxes[i].style.animation = "boxHoverFadeRelease 0.5s linear";
-//             gradeWork.style.animation = "none";
-//             allBoxes[i].style.opacity = 1;
-//         }
-//     });
-// }

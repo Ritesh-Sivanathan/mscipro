@@ -6,14 +6,19 @@ from email.mime.multipart import MIMEMultipart
 import smtplib
 
 app = Flask(__name__)
-app.secret_key = 'nonono'
+app.secret_key = my_secret_key
 
 def connect_to_db():
     try:
         conn = mysql.connector.connect(
-            'stop - trying - bro - bro'
+            host=host_name,
+            user=user_name,
+            password=password_a,
+            database=database_a
         )
+
         return conn
+
     except mysql.connector.Error as e:
         print("Error connecting to database:", e)
         return None
@@ -122,6 +127,32 @@ def submit_form():
 def logout():
     session['logged_in'] = False
     return redirect('https://mscipro.pythonanywhere.com/')
+
+@app.route('/myresources')
+def myresource():
+    return render_template('saved.html')
+    
+
+@app.route('/send-resources', methods=['POST'])
+def sendResource():
+
+    resource_url = request.form['resource_url']
+    resource_name = request.form['resource_name']
+
+    conn = connect_to_db()
+    
+    if conn:
+
+        cursor = conn.cursor(dictionary=True)
+        cursor.execute('INSERT INTO resource (resource_name, resource_url) VALUES (%s, %s)', (resource_name, resource_url))
+        conn.commit()  # Commit the transaction
+        cursor.close()
+        conn.close()
+
+        return 'Resources saved successfully'
+
+    else:
+        return 'Error connecting to the database. Please try again.'
 
 # -------- Subjects Main --------
 
