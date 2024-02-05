@@ -6,12 +6,12 @@ from email.mime.multipart import MIMEMultipart
 import smtplib
 
 app = Flask(__name__)
-app.secret_key = 'no chance'
+app.secret_key = 'nah brobro'
 
 def connect_to_db():
     try:
         conn = mysql.connector.connect(
-            # not getting this info brobro
+                'nope'
         )
         return conn
     except mysql.connector.Error as e:
@@ -61,7 +61,7 @@ def login_form():
     user = login_user(username, email, password)
     
     if user:
-        return render_template('User Management/loginsucess.html')
+        return render_template('User Management/loginsuccess.html')
     else:
         return "Invalid username/email or password"
 
@@ -110,7 +110,7 @@ def submit_form():
 
     register_user(f_name, l_name, username, password, email)
 
-    return "Submitted Successfully"
+    return render_template('User Management/registersuccess.html')
 
 # -------- Log out --------
 
@@ -123,14 +123,14 @@ def logout():
 
 @app.route('/mathematics')
 def math():
-    return render_template('Subjects/math/mathematics.html')
+    if session['logged_in'] == True:
+        return render_template('Subjects/math/mathematics.html')
+    else:
+        return render_template('User Management/register.html')
 
 @app.route('/science')
 def science():
-    if session['logged_in'] == True:
-        return render_template('Subjects/science/science.html')
-    else:
-        return render_template('User Management/register.html')
+    return render_template('Subjects/science/science.html')
 
 @app.route('/programming')
 def programming():
