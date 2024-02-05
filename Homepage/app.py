@@ -1,4 +1,4 @@
-from flask import Flask, render_template, request, redirect, url_for, session, jsonify
+from flask import Flask, render_template, request, redirect, url_for, session, jsonify, send_from_directory
 import csv
 import mysql.connector
 from email.mime.text import MIMEText
@@ -6,12 +6,12 @@ from email.mime.multipart import MIMEMultipart
 import smtplib
 
 app = Flask(__name__)
-app.secret_key = 'nah brobro'
+app.secret_key = 'nonono'
 
 def connect_to_db():
     try:
         conn = mysql.connector.connect(
-                'nope'
+            'stop - trying - bro - bro'
         )
         return conn
     except mysql.connector.Error as e:
@@ -33,6 +33,10 @@ def index():
 @app.route('/login')
 def login():
     return render_template('User Management/login.html')
+
+@app.route('/json/resource.json')
+def resource():
+    return send_from_directory('static', 'resource.json')
 
 def login_user(username, email, password):
     conn = connect_to_db()
@@ -149,6 +153,12 @@ def calculator():
 @app.route('/novicecoding')
 def noviceCoding():
     return render_template('Subjects/programming/problems/novicecoding.html')
+
+# -------- Science Subpage --------
+
+@app.route('/g1pp')
+def g1pp():
+    return render_template('Subjects/science/problems/g1pp.html')
 
 # -------- Other Pages --------
 
