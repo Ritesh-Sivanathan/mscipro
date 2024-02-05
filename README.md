@@ -1,6 +1,7 @@
 <h1 align="center"> MSCIPro </h1>
 
-❗ Database coming soon to host scraped resources | will be hosted on my own machine
+❗ Database setup!! Lots of features coming soon
+❗ running flask at the start might have been an idiotic move on my part. i am now undergoing the painful painful PAINFUL process of switching to node + express so i can self host
 
 # My favourite scripts on the site (for those interested)
 
