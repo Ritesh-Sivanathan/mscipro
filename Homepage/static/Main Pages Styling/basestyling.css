@@ -18,6 +18,10 @@ nav {
     margin-top:2.5%;
 }
 
+#foot {
+  background-color:black;
+}
+
 .mode-button {
   background-color: #343a40;
   color: rgba(192, 192, 192, 0.973); 
