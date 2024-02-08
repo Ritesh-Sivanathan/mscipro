@@ -45,7 +45,7 @@ def connect_to_db():
     try:
 
         conn = mysql.connector.connect(
-            ["REDACTED"]
+            'stop - trying - bro - bro'
         )
 
         return conn
@@ -154,104 +154,6 @@ def logout():
     logout_user()
     session['logged_in'] = False
     return redirect('https://mscipro.pythonanywhere.com/')
-
-# -------- Resource Management --------
-
-@app.route('/saveresources')
-def myresource():
-    if session['logged_in']:
-        return render_template('saved.html')
-    return render_template('homepage.html')
-
-@app.route('/send-resources', methods=['POST'])
-def sendResource():
-
-    resource_url = request.form['resource_url']
-    resource_name = request.form['resource_name']
-
-    username = session['username']
-
-    conn = connect_to_db()
-
-    if conn and session['logged_in']:
-
-        cursor = conn.cursor(dictionary=True)
-
-        cursor.execute("SELECT id FROM users WHERE username=%s", (username,))
-        mid = cursor.fetchone()
-        if mid:
-            u_id = mid['id']
-
-        cursor.execute('INSERT INTO resource (resource_name, resource_url, id) VALUES (%s, %s, %s)', (resource_name, resource_url, u_id))
-        conn.commit()  # Commit the transaction
-
-        cursor.close()
-        conn.close()
-
-
-        return 'Resources saved successfully'
-
-    else:
-        return 'Error connecting to the database. Please try again.'
-
-@app.route('/getresources')
-def get_resources():
-
-    user_id = current_user.get_id()[7:]
-    new_user_id = user_id[0:user_id.index('}')]
-
-    conn = connect_to_db()
-
-    if conn:
-        cursor = conn.cursor(dictionary=True)
-        cursor.execute("SELECT resource_name, resource_url FROM resource WHERE id=%s",(new_user_id,))
-        resources = cursor.fetchall()
-        cursor.close()
-        conn.close()
-
-        resource_strings = {resource['resource_name']: resource['resource_url'] for resource in resources}
-        console_log = ', '.join([f"{key}: {value}" for key, value in resource_strings.items()])
-
-        return render_template_string("<h2> Debug </h2>" + console_log)
-    else:
-        return "Error connecting to the database. Please try again."
-
-@app.route('/json/resource.json')
-def resource():
-    return send_from_directory('static', 'resource.json')
-
-def log_user_in(username, email, password):
-    conn = connect_to_db()
-    if conn:
-        cursor = conn.cursor(dictionary=True)
-        cursor.execute("SELECT * FROM users WHERE (username = %s OR email = %s) AND password = %s", # avoids sql injection
-                       (username, email, password))
-
-        user = cursor.fetchone()
-
-        cursor.execute("SELECT id FROM users WHERE username=%s", (username,))
-
-        user_id = cursor.fetchone()
-
-        cursor.close()
-        conn.close()
-
-        if user:
-
-            session['logged_in'] = True
-            session['username'] = username
-            session['user_id'] = user_id
-
-            login_user(User(user_id))
-
-        return user
-
-    else:
-
-        return None
-
-# -------- Debugging --------
-
 
 # -------- Subjects Main --------
 
