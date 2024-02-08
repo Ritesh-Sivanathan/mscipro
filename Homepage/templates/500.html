@@ -1,0 +1,30 @@
+{% extends 'base.html' %}
+
+{% block five_o_o %}
+
+<center>
+    <div class="error">
+        <h1> 500 | Database Connection Error </h1>
+        <hr>
+        <h2> <a href="/"> Return Home </a> </h2>
+    </div>
+</center>
+
+<style>
+
+    body,h1,h2 {
+        background-color:black;
+    }
+
+    .error {
+        margin-top:15%;
+    }
+
+    hr {
+        background-color:white;
+        width:20vw;
+    }
+
+</style>
+
+{% endblock %}
