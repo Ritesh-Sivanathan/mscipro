@@ -1,7 +1,7 @@
 <h1 align="center"> MSCIPro </h1>
 
 ❗ Database setup!! Lots of features coming soon
-❗ running flask at the start might have been an idiotic move on my part. i am now undergoing the painful painful PAINFUL process of switching to node + express so i can self host. updates on the main page will still be rolling out normally, this is just in case flask cannot handle the user traffic for some reason also for more control over how i deploy it
+❗ i am converting the website to express+node+react because I feel like i have a lot more control over what I do. main website will still be updated often
 
 # My favourite scripts on the site (for those interested)
 
