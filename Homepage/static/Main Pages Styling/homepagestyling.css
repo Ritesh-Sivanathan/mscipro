@@ -9,10 +9,6 @@ body {
   font-family: 'Archivo', sans-serif;
 }
 
-#foot {
-  margin-top:-2%;
-}
-
 p {
   font-family: 'Kanit', sans-serif;
 }
@@ -25,6 +21,10 @@ li {
 
 ::-webkit-scrollbar {
   display:none;
+}
+
+.a:hover{
+  color: blue;
 }
 
 @keyframes pulse {
@@ -133,7 +133,6 @@ li {
 
 }}
 
-
 .subject_container {
   display: inline-block;
   text-align:center;
@@ -149,38 +148,6 @@ li {
   display:flexbox;
   margin-top:5%;
   color:white;
-}
-
-#button_totop {
-  border-color:white;
-  border-radius:5px;
-}
-
-#started {
-  margin-top: 5%;
-  margin-bottom:5%;
-  border: 1px solid #fff;
-  border-radius: 5px;
-  height: 50px;
-  width: clamp(150px, 200px, 300px);
-  font-size: 25px;
-  color: rgb(68, 68, 68);
-  font-family: 'Josefin Sans', sans-serif;
-  transition: transform 1s ease;
-  animation: pulse 15s infinite; 
-}
-
-#dialog {
-  display:none;
-}
-
-#started:hover {
-  transform: scale(1.1);
-  animation: none;
-}
-
-.a:hover{
-  color: blue;
 }
 
 .square-text {
@@ -281,4 +248,34 @@ li {
   color:red;
 }
 
+#button_totop {
+  border-color:white;
+  border-radius:5px;
+}
 
+#started {
+  margin-top: 5%;
+  margin-bottom:5%;
+  border: 1px solid #fff;
+  border-radius: 5px;
+  height: 50px;
+  width: clamp(150px, 200px, 300px);
+  font-size: 25px;
+  color: rgb(68, 68, 68);
+  font-family: 'Josefin Sans', sans-serif;
+  transition: transform 1s ease;
+  animation: pulse 15s infinite; 
+}
+
+#foot {
+  margin-top:-2%;
+}
+
+#dialog {
+  display:none;
+}
+
+#started:hover {
+  transform: scale(1.1);
+  animation: none;
+}

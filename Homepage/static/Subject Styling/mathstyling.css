@@ -1,58 +1,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Mukta:wght@600&family=Poppins:wght@300&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Kanit:wght@300&display=swap');
 
-@keyframes boxHoverFade {
-    0% {opacity:1;}
-    10% {opacity:0.9;}
-    20% {opacity:0.8;}
-    30% {opacity:0.7;}
-    40% {opacity:0.6;}
-    50% {opacity:0.5;}
-    60% {opacity:0.4;}
-    70% {opacity:0.3;}
-    80% {opacity:0.2;}
-    90% {opacity:0.1;}
-    100% {opacity:0;}
-}
-
-@keyframes boxHoverFadeRelease {
-    0% { opacity: 0; }
-    10% { opacity: 0.1; }
-    20% { opacity: 0.2; }
-    30% { opacity: 0.3; }
-    40% { opacity: 0.4; }
-    50% { opacity: 0.5; }
-    60% { opacity: 0.6; }
-    70% { opacity: 0.7; }
-    80% { opacity: 0.8; }
-    90% { opacity: 0.9; }
-    100% { opacity: 1; }
-}
-
-@keyframes moveBox {
-    0% { width: 0%; }
-    5% { width: 5%; }
-    10% { width: 10%; }
-    15% { width: 15%; }
-    20% { width: 20%; }
-    25% { width: 25%; }
-    30% { width: 30%; }
-    35% { width: 35%; }
-    40% { width: 40%; }
-    45% { width: 45%; }
-    50% { width: 50%; }
-    55% { width: 55%; }
-    60% { width: 60%; }
-    65% { width: 65%; }
-    70% { width: 70%; }
-    75% { width: 75%; }
-    80% { width: 80%; }
-    85% { width: 85%; }
-    90% { width: 90%; }
-    95% { width: 95%; }
-    100% { width: 100%; }
-}
-
 ::-webkit-scrollbar {
     display:none;
 }
@@ -62,6 +10,44 @@ html, body {
   scroll-behavior: smooth;
   font-family: 'Kanit', sans-serif;
   overflow-x:hidden;
+}
+
+@media (max-width: 1000px) {
+  .boxes {
+    display:block;
+    width:450%;
+    margin-left:10%;
+  }
+
+  ::-webkit-scrollbar {
+    display:none;
+  }
+}
+  
+@media screen and (max-width:1000px) {
+  #btn-bottom, #btn-top{ 
+    display:block;
+  }
+}
+
+@media screen and (min-width:1001px) {
+  #btn-bottom, #btn-top {
+    display:none;
+  }
+}
+
+.boxes {
+  display:flex;
+  justify-content: space-evenly;
+}
+
+.modal-content li {
+  padding:10px;
+}
+
+.grworklist, .examslist, .ourresourcelist, .ofgrworklist {
+  margin-top:5%;
+  font-size:150%;
 }
 
 #foot {
@@ -75,39 +61,6 @@ html, body {
   padding:5px;
 }
 
-.boxes {
-  display:flex;
-  justify-content: space-evenly;
-}
-
-@media (max-width: 1000px) {
-    .boxes {
-      display:block;
-      width:450%;
-      margin-left:10%;
-    }
-
-    ::-webkit-scrollbar {
-      display:none;
-    }
-}
-    
-@media screen and (max-width:1000px) {
-    #btn-bottom, #btn-top{ 
-      display:block;
-    }
-}
-
-@media screen and (min-width:1001px) {
-    #btn-bottom, #btn-top {
-      display:none;
-    }
-}
-
-.modal-content li {
-  padding:10px;
-}
-
 #grwork, #exams, #ourresources, #ofgrwork, #rsrcs {
   height: 50%;
   margin-top:2%;
@@ -117,12 +70,6 @@ html, body {
   padding:15px;
   border-radius:5px;
 }
-
-.grworklist, .examslist, .ourresourcelist, .ofgrworklist {
-  margin-top:5%;
-  font-size:150%;
-}
-
 
 #hover-link:hover {
   text-decoration:none;

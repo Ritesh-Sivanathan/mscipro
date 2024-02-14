@@ -12,22 +12,6 @@ html, body {
   overflow-x:hidden;
 }
 
-#foot {
-  margin-top:11%;
-}
-
-#btn-top, #btn-bottom {
-  margin-top:5%;
-  border: 2px solid black;
-  border-radius: 5px;
-  padding:5px;
-}
-
-.boxes {
-  display:flex;
-  justify-content: space-evenly;   
-}
-
 @media (max-width: 800px) {
   .boxes {
     display:block;
@@ -52,19 +36,14 @@ html, body {
   }
 }
 
-#grwork, #exams, #pracprob, #ofgrwork, #rsrcs {
-  height: 50%;
-  margin-top:2%;
-  width: 18%;
-  background-color: rgb(92, 91, 91) ;
-  border: 2px solid rgb(53, 53, 53);
-  padding:15px;
-  border-radius:5px;
-}
-
 .grworklist, .examslist, .pracproblist, .ofgrworklist {
   margin-top:5%;
   font-size:150%;
+}
+
+.boxes {
+  display:flex;
+  justify-content: space-evenly;   
 }
 
 #hover-link:hover {
@@ -78,4 +57,25 @@ html, body {
   color: transparent; 
   font-size: 20px;
   font-weight: bold; 
+}
+
+#grwork, #exams, #pracprob, #ofgrwork, #rsrcs {
+  height: 50%;
+  margin-top:2%;
+  width: 18%;
+  background-color: rgb(92, 91, 91) ;
+  border: 2px solid rgb(53, 53, 53);
+  padding:15px;
+  border-radius:5px;
+}
+
+#foot {
+  margin-top:11%;
+}
+
+#btn-top, #btn-bottom {
+  margin-top:5%;
+  border: 2px solid black;
+  border-radius: 5px;
+  padding:5px;
 }
