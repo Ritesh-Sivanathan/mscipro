@@ -12,22 +12,6 @@ html, body {
   overflow-x:hidden;
 }
 
-#foot {
-  margin-top:1%;
-}
-
-#btn-top, #btn-bottom {
-  margin-top:5%;
-  border: 2px solid black;
-  border-radius: 5px;
-  padding:5px;
-}
-
-.boxes {
-  display:flex;
-  justify-content: space-evenly;
-}
-
 @media (max-width: 1000px) {
     .boxes {
       display:block;
@@ -52,6 +36,17 @@ html, body {
   }
 }
 
+.boxes {
+  display:flex;
+  justify-content: space-evenly;
+}
+
+
+.grworklist, .examslist, .pracproblist, .ofgrworklist {
+  margin-top:5%;
+  font-size:150%;
+}
+
 
 #grwork, #exams, #pracprob, #ofgrwork, #rsrcs {
     height: 50%;
@@ -63,9 +58,15 @@ html, body {
     border-radius:5px;
 }
 
-.grworklist, .examslist, .pracproblist, .ofgrworklist {
-    margin-top:5%;
-    font-size:150%;
+#foot {
+  margin-top:1%;
+}
+
+#btn-top, #btn-bottom {
+  margin-top:5%;
+  border: 2px solid black;
+  border-radius: 5px;
+  padding:5px;
 }
 
 #hover-link:hover {

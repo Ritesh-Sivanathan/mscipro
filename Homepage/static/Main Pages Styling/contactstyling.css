@@ -12,10 +12,6 @@
   --youtube-color: red;
 }
 
-#foot {
-  display:none;
-}
-
 @media (max-width: 800px) {
   .link-container .boxes {
     flex-direction: column; 
@@ -61,6 +57,10 @@
   font-family: 'Josefin Sans', sans-serif;
   font-size:250%;
   color: white;
+}
+
+#foot {
+  display:none;
 }
 
 #email:hover {

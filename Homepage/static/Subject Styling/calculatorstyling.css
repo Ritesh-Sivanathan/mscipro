@@ -3,18 +3,8 @@ body {
   background-color:black;
 }
 
-#info {
-  margin-left:-65vw;
-  margin-top:-50vh;
-  width:25%;
-  height:25%;
-  font-size:25px;
-  background-color:grey;
-  padding:20px;
-}
-
 .calculator-screen {
-  background-color:rgb(39, 53, 40);
+  background-color:lightgreen;
   width:18vw;
   height:10vh;
   margin-top:5%;
@@ -56,6 +46,16 @@ body {
   margin-left: 28%;
   font-family: 'Inconsolata', monospace;
   cursor: pointer;
+}
+
+#info {
+  margin-left:-65vw;
+  margin-top:-50vh;
+  width:25%;
+  height:25%;
+  font-size:25px;
+  background-color:grey;
+  padding:20px;
 }
 
 #mainpage {
