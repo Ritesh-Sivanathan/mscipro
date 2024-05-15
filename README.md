@@ -1,5 +1,7 @@
 <h1 align="center"> MSCIPro </h1>
 
+<h1 align="center"> <b> *** THIS REPOSITORY IS NOT USED ANYMORE. SEE WEBSITE FOR NEW UPDATES *** </b> </h1>
+
 ❗ Database setup!! Lots of features coming soon
 ❗ i am converting the website to express+node+react because I feel like i have a lot more control over what I do. main website will still be updated often
 
